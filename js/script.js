@@ -4,7 +4,7 @@
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
 const rightBtn = document.querySelector('.arrow-left')
-const leftBtn = document.querySelector('.arrow-left')
+const leftBtn = document.querySelector('.arrow-right')
 // ================implementing slide section==============
 ///////////////////////
 slides.forEach((slide, i) =>{

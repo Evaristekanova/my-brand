@@ -314,40 +314,29 @@ h5{
     align-items: center;
     transition: transform 1.2s;
 }
-.arrow-left{
+.arrow-btn{
     color: var(--green);
     position: absolute;
     height: 3.5rem;
     width: 3.5rem;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--gray-color);
+    border-radius: 50%;
+    font-size: 30px;
+    z-index: 10;
+    border: none;
+    cursor: pointer;
+
+}
+.arrow-left{
     right: 0;
     top: 48%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    background-color: var(--gray-color);
-    border-radius: 50%;
-    font-size: 30px;
-    z-index: 10;
-    border: none;
-    cursor: pointer;
 }
-
 .arrow-right{
-    cursor: pointer;
-    border: none;
-    color: var(--green);
-    position: absolute;
-    height: 3.5rem;
-    width: 3.5rem;
     left: 0;
     top: 48%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    background-color: var(--gray-color);
-    border-radius: 50%;
-    font-size: 30px;
-    z-index: 10;
 }
 .slide-component{
     position: absolute;
@@ -358,6 +347,7 @@ h5{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+    transition: all 1.2s;
 }
 .work-image{
     width: 45%;
