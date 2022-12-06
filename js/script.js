@@ -1,11 +1,29 @@
 'use strict'
 ////////////////////selection//////////////
 
+const nav = document.querySelector('.navbar')
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
 const rightBtn = document.querySelector('.arrow-left')
 const leftBtn = document.querySelector('.arrow-right')
-// ================implementing slide section==============
+// ================implementing scroll to clicked section section==============//
+
+nav.addEventListener('click', function(e){
+	e.preventDefault()
+	const link = e.target
+	console.log(link)
+	if(link.classList.contains('nav-link')){
+		console.log(link)
+	const linkId = link.getAttribute('href')
+	const scrol = document.querySelector(linkId)
+	scrol.scrollIntoView({behavior: 'smooth'})
+	}
+	else{
+		console.log('huzzo')
+	}
+
+})
+// ================implementing slide section==============//
 ///////////////////////
 slides.forEach((slide, i) =>{
 	slide.style.transform = `translateX(${i * 100}%)`
