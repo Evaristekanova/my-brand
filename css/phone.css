@@ -1,4 +1,4 @@
-@media only screen and (max-width:520px) {
+@media only screen and (max-width:600px) {
 	body{
 		color: var(--white);
 		font-size: 16px;
@@ -239,7 +239,7 @@
 		width: 100%;
 		margin: 0 auto;
 		overflow: hidden;
-		height: 30rem;
+		/* height: 30rem; */
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -519,7 +519,7 @@
 	.btn-send{
 		background-color: var(--green);
 		cursor:pointer;
-		width: 70px;
+		width: 100px;
 		line-height: 2.5;
 		padding:.2rem .7rem ;
 		border-radius: .3rem;
@@ -838,7 +838,7 @@
 		width: 100%;
 		margin: 0 auto;
 		overflow: hidden;
-		height: 30rem;
+		/* height: 25rem; */
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -899,7 +899,7 @@
 		border-radius: 20px;
 	}
 	.explain-work{
-		width: 90%;
+		width: 100%;
 		line-height: 1.7;
 		word-spacing: 3px;
 		padding: 20px 25px;
