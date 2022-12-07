@@ -595,7 +595,7 @@
 }
 @media only screen and (max-width:420px){
 	.blog{
-		width: 300px;
+		width: 330px;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
@@ -603,7 +603,7 @@
 }
 @media only screen and (max-width:340px){
 	.blog{
-		width: 270px;
+		width: 300px;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
