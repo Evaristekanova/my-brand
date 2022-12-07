@@ -11,13 +11,14 @@
 	}
 	/* --section title--- */
 	.section-title{
+		width: 100%;
 		position: relative;
-		letter-spacing: 1.7px;
-		word-spacing: 3px;
+		/* letter-spacing: 1.7px; */
+		word-spacing: 2px;
 		text-align: center;
 		text-transform: capitalize;
 		line-height: 1.2;
-		font-size: 25px;
+		font-size: 22px;
 		font-weight: 600;
 		padding-bottom: 5px;
 		margin-bottom: 50px;
@@ -134,7 +135,7 @@
 		filter: grayscale(0)
 	}
 	h1, h2{
-		font-size: 25px;
+		font-size: 22px;
 	}
 	/* ----------------------- division which catains all about me------------- */
 	.skills-container{
@@ -351,10 +352,12 @@
 	/* ======================================== blog section ============================ */
 	.subscription{
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 10px;
-		width: 400px;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: flex-start;
+		padding: 0px;
+		/* width: 400px; */
 		margin-bottom: 30px;
 	}
 	.subscription input{
@@ -488,6 +491,7 @@
 	}
 	.form-to-fill{
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 		gap: 2rem;
 	}
