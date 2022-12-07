@@ -1,13 +1,16 @@
 'use strict'
 ////////////////////selection//////////////
 
-const nav = document.querySelector('.navbar')
+const nav = document.querySelector('nav')
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
 const rightBtn = document.querySelector('.arrow-left')
 const leftBtn = document.querySelector('.arrow-right')
+const link = document.querySelector('.nav-link')
+const footLink = document.querySelector('.flink')
+// const link = document.
 // ================implementing scroll to clicked section section==============//
-
+// ----------------navigation----------------//
 nav.addEventListener('click', function(e){
 	e.preventDefault()
 	const link = e.target
@@ -21,7 +24,16 @@ nav.addEventListener('click', function(e){
 	else{
 		console.log('huzzo')
 	}
-
+})
+// -----------footer link--------------------//
+footLink.addEventListener('click', function(e){
+	e.preventDefault()
+	if(e.target.classList.contains('nav-link')){
+		const link = e.target
+		const linkId = link.getAttribute('href')
+		console.log(linkId)
+		document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
+	}
 })
 // ================implementing slide section==============//
 ///////////////////////

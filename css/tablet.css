@@ -42,7 +42,7 @@
         width: 48%;
         height: 100%;
         z-index: 5;
-    
+
     }
     .photo-container .home-image{
         height: 100%;
@@ -233,7 +233,7 @@
     }
     header{
         height: 90vh;
-        
+
     }
     .head-container{
         /* margin-top: 40px; */
@@ -282,10 +282,10 @@
     }
 }
 @media only screen and (max-width:710px) {
-    body{
+    /* body{
 
-    }
+    } */
 }
-@media only screen and (max-width:710px){
+@media only screen and (max-width:660px){
 
 }

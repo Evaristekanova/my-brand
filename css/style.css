@@ -29,6 +29,10 @@ header{
 .section{
     padding: 60px 70px;
 }
+.nav-link{
+    color: var(--white);
+    text-decoration: none;
+}
 /* --section title--- */
 .section-title{
     position: relative;
@@ -118,7 +122,7 @@ header{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 .navbar li{
@@ -518,7 +522,6 @@ h5{
     justify-content: center;
 }
 /* ============================================contact section====================== */
-
 /* address div */
 .contact-container{
 	display: flex;
@@ -589,7 +592,6 @@ h5{
 	border-radius: .3rem;
 	border: none;
 }
-
 /* ======================================login page==========================*/
 .login-contanier{
     display: flex;
@@ -661,7 +663,7 @@ h5{
     width: 20%;
     height: 100%;
     padding: 20px;
-    padding-top: 80px;
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -775,4 +777,59 @@ h5{
 .dash-btn{
     max-width: 220px;
     padding: 10px 10px;
+}
+/* ==========================================footer========================= */
+.footer-line{
+    height: 3px;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color:var(--white);
+}
+.footer{
+    padding: 20px 70px;
+}
+.footer-container{
+    background-color: var(--gray-color);
+    padding: 10px 20px;
+}
+.footer-description{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.footer-link{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.flink{
+    display: flex;
+    justify-content: space-between;
+}
+.flink li{
+    list-style: none;
+    padding: 5px 10px;
+    text-align: left;
+}
+.flink a:hover{
+    color: var(--green);
+}
+
+.footer-icons{
+    display: flex;
+    justify-content: space-between;
+    color: var(--green);
+    font-size: 25px;
+}
+.footer-icons a{
+    text-decoration: none;
+    color: var(--green);
+}
+.footer-icons i{
+    padding: 5px 10px;
+}
+.footer-copyrigth{
+    text-align: center;
 }
