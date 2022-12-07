@@ -10,7 +10,7 @@
 	.humberger{
         position: absolute;
         top: -5%;
-        right: 30px;
+        right: 40px;
         color: var(--green);
         font-size: 40px;
         visibility: visible;
@@ -595,7 +595,7 @@
 }
 @media only screen and (max-width:420px){
 	.blog{
-		width: 330px;
+		width: 300px;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
@@ -603,7 +603,7 @@
 }
 @media only screen and (max-width:340px){
 	.blog{
-		width: 300px;
+		width: 270px;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
@@ -1195,7 +1195,7 @@
 }
 @media only screen and (max-width:300px){
 	.blog{
-		width: 270px;
+		width: 260px;
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
