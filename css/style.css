@@ -11,6 +11,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* ----humberger------ */
+.humberger{
+    position: absolute;
+    top: 0;
+    right: 40px;
+    color: var(--green);
+    font-size: 40px;
+    visibility: hidden;
+}
 body{
     color: var(--white);
     font-size: 18px;

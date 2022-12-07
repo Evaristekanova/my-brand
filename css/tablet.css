@@ -73,6 +73,9 @@
     .nav-container{
         display: none;
     }
+    .humberger{
+        visibility: visible;
+    }
     .triangle{
         display: none;
     }
@@ -234,6 +237,15 @@
     header{
         height: 90vh;
 
+    }
+    .humberger{
+        position: absolute;
+        top: -6.5%;
+        right: 40px;
+        color: var(--green);
+        font-size: 40px;
+        visibility: visible;
+        transform: translateY(-100%);
     }
     .head-container{
         /* margin-top: 40px; */
