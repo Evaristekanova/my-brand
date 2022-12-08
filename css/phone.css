@@ -744,7 +744,7 @@
 	/* -------profile image--------- */
 	.photo-container .home-image{
 		/* display: none; */
-		height: 33vh;
+		height: 32vh;
 		width: 100%;
 		filter: grayscale(100%);
 		object-fit: cover;
