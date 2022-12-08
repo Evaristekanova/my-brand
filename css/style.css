@@ -14,7 +14,7 @@
 /* ----humberger------ */
 .humberger{
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 40px;
     color: var(--green);
     font-size: 40px;
