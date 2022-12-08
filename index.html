@@ -13,39 +13,40 @@
 </head>
 <body>
     <header id="home">
-        <div class="nav-container">
-            <nav class="navbar navresp">
-                <li><a class="nav-link" href="#home">Home</a></li>
-                <li><a class="nav-link" href="#skills">About Me</a></li>
-                <li><a class="nav-link" href="#mywork">My work</a></li>
-                <li><a class="nav-link" href="#blogs">Blogs</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-                <li><a class="nav-link" href="./html/login.html">Login</a></li>
-            </nav>
-        </div>
-        <!-- triangle symbol -->
-        <div class="triangle"></div>
-        <!-- home section -->
-        <div class="head-container">
-            <div class="photo-container">
-                <img class="home-image" src="./img/passport.jpeg">
+        <div class="header-container">
+            <div class="nav-container">
+                <nav class="navbar navresp">
+                    <li><a class="nav-link" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="#skills">About Me</a></li>
+                    <li><a class="nav-link" href="#mywork">My work</a></li>
+                    <li><a class="nav-link" href="#blogs">Blogs</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                    <li><a class="nav-link" href="login.html">Login</a></li>  
+              </nav>
             </div>
-            <div class="name-container">
-                <h1>Hi, i'm <span class="sp-name">Evariste <span class="l-name">DUSINGIZIMANA</span</span></h1>
-                <h2>Junior Fullstack Engineer</h2>
-                <!-- <p class="p-nemed">&quot; I'm an experienced software engineer who constantly seeks out innovative
-                    solutions to everyday problems&quot;
-                </p> -->
-                <p>
-                    i am able to work well on both in a team environmet as well as using own initiative
-                    and also work well under pressure and adhere to strict deadlines.
-                </p>
-                <a class="btn btn-cv" href="#">
-                    <span class="btn-text">Download Cv </span>
-                    <span class="btn-icon"> <i class="fa-solid fa-download"></i></span>
-                </a>
-                
-            </div>
+            <!-- triangle symbol -->
+            <div class="triangle"></div>
+            <!-- home section -->
+            <div class="head-container">
+                <div class="photo-container">
+                    <img class="home-image" src="./img/passport.jpeg">
+                </div>
+                <div class="name-container">
+                    <h1>Hi, i'm <span class="sp-name">Evariste <span class="l-name">DUSINGIZIMANA</span</span></h1>
+                    <h2>Junior Fullstack Engineer</h2>
+                    <!-- <p class="p-nemed">&quot; I'm an experienced software engineer who constantly seeks out innovative
+                        solutions to everyday problems&quot;
+                    </p> -->
+                    <p>
+                        i am able to work well on both in a team environmet as well as using own initiative
+                        and also work well under pressure and adhere to strict deadlines.
+                    </p>
+                    <a class="btn btn-cv" href="#">
+                        <span class="btn-text">Download Cv </span>
+                        <span class="btn-icon"> <i class="fa-solid fa-download"></i></span>
+                    </a>
+                    
+                </div>
         </div>
    </header>
    <div class="humberger"><i class="fa-solid fa-bars"></i></div>
@@ -118,8 +119,8 @@
                         </div>
                         <h4 class="timeline-title">Andela trainee</h4>
                         <p>
-                            computer science student with growthmindset working
-                            contributed on different studentsprojects during studies
+                            computer science student with growth mindset working
+                            contributed on different students projects during studies
                         </p>
                     </div>
                 </div>
@@ -201,14 +202,14 @@
    </section>
    <section class="section" id="blogs">
     <h2 class="section-title">Here are <span>blogs</span></h2>
-    <div class="subscription">
+    <!-- <div class="subscription">
         <input type="email" placeholder="Enter your email" required>
         <button class="sub-btn">subscribe</button>
-    </div>
+    </div> 
     <div class="search">
         <input type="text">
         <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
+    </div>-->
     <div class="blogs-block">
         <div class="blog">
             <img src="./img/work1.jpg" alt="" srcset="">
@@ -237,7 +238,7 @@
             <img src="./img/work1.jpg" alt="" srcset="">
             <div class="article">
                 <h3 class="blog-title">how to create your own website</h3>
-                <p>
+                <p>blog
                     this is a pig game it is all about dice game
                      where to player can roll dice to see who  will win the game
                      this is a pig game it is all about dice game
@@ -246,7 +247,7 @@
         </div>
     </div>
     <div class="blog-button-div">
-        <a class="btn btn-cv" href="#">
+        <a class="btn btn-cv" href="./html/blog.html">
             <span class="btn-text blog-btn">View more </span>
         </a>
     </div>
@@ -314,6 +315,10 @@
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
             </div>
+        </div>
+        <div class="subscription sub-fotter">
+            <input class="in-subscribe" type="email" placeholder="Enter your email" required>
+            <button class="sub-btn">subscribe</button>
         </div>
         <div class="footer-copyrigth">
             <p>Evariste &copy; all right reserved</p>

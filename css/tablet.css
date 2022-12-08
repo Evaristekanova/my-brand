@@ -232,7 +232,7 @@
 @media only screen and (max-width:710px) {
     body{
         padding: 50px 50px;
-        transform: translateY(350px);
+        /* transform: translateY(350px); */
     }
     header{
         height: 90vh;

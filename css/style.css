@@ -38,6 +38,9 @@ header{
 .section{
     padding: 60px 70px;
 }
+input{
+    outline: none;
+}
 .nav-link{
     color: var(--white);
     text-decoration: none;
@@ -313,16 +316,16 @@ h5{
 }
 } */
 /* ============================ my work section================================= */
-#mywork{
+/* #mywork{
     margin-bottom: 30px;
-}
+} */
 .slider{
     position: relative;
     padding: 10px;
     max-width: 80%;
     margin: 0 auto;
 	overflow: hidden;
-    height: 25rem;
+    height: 22rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -438,7 +441,7 @@ h5{
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    width: 400px;
+    width: 30vw;
     margin-bottom: 30px;
 }
 .subscription input{
@@ -447,6 +450,15 @@ h5{
     padding: 12px;
     border: none;
     background-color: var(--gray-color);
+}
+/* .sub-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+} */
+.subscription .in-subscribe{
+    background-color: var(--dark-blue);
 }
 .subscription input::placeholder{
     font-size: 14px;
@@ -607,7 +619,7 @@ h5{
     flex-direction: column;
     justify-content: space-around;
     /* align-items: center; */
-    max-width: 30%;
+    max-width: 300px;
     margin: 0 auto;
     margin-top: 90px;
     background-color:var(--gray-color);
