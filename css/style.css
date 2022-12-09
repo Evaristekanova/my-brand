@@ -866,7 +866,7 @@ h5{
     position: fixed;
     top: 20px;
     left: 10px;
-    /* right: 100%; */
+    right: 100%;
     padding: 10px;
     display: grid;
     justify-items: center;
@@ -874,7 +874,7 @@ h5{
     width: 280px;
     background-color: var(--gray-color);
     transition: .4s all ease-in-out;
-    visibility: hidden;
+    /* visibility: hidden; */
     z-index: 100;
 }
 .active{
