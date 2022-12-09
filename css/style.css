@@ -873,13 +873,13 @@ h5{
     align-items: center;
     width: 280px;
     background-color: var(--gray-color);
-    /* transition: .5s all ease-in-out; */
+    transition: .5s all ease-in-out;
     visibility: hidden;
     z-index: 100;
 }
-/* .active{
+.active{
     right: 0;
-} */
+}
 .reponsive-nav{
     display: flex;
     flex-direction: column;

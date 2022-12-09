@@ -62,13 +62,13 @@ humberger.addEventListener('click', function(){
 	console.log('clicked')
 	console.log(humbergerContainer)
 	humbergerContainer.style.visibility = 'visible'
-	// humbergerContainer.classList.add('active')
+	humbergerContainer.classList.add('active')
 	console.log("clicked")
 	humberger.style.visibility = 'hidden'
 })
 closeHumberger.addEventListener('click', function(){
 	console.log(humbergerContainer)
 	humbergerContainer.style.visibility = 'hidden'
-	// humbergerContainer.classList.remove('active')
+	humbergerContainer.classList.remove('active')
 	humberger.style.visibility = 'visible'
 })
