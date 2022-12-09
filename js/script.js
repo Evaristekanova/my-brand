@@ -11,9 +11,19 @@ const footLink = document.querySelector('.flink')
 const humberger = document.querySelector('.humberger')
 const closeHumberger = document.querySelector('.close')
 const humbergerContainer = document.querySelector('.humberger-container')
+const resNav = document.querySelector('.reponsive-nav')
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
 nav.addEventListener('click', function(e){
+	e.preventDefault()
+	const link = e.target
+	console.log(link)
+	if(link.classList.contains('nav-link')){
+	const linkId = link.getAttribute('href')
+	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
+	}
+})
+resNav.addEventListener('click', function(e){
 	e.preventDefault()
 	const link = e.target
 	console.log(link)
