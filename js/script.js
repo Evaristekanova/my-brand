@@ -1,14 +1,16 @@
 'use strict'
 ////////////////////selection//////////////
 
-const nav = document.querySelector('nav')
+const nav = document.querySelector('.navbar')
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
 const rightBtn = document.querySelector('.arrow-left')
 const leftBtn = document.querySelector('.arrow-right')
 const link = document.querySelector('.nav-link')
 const footLink = document.querySelector('.flink')
-// const link = document.
+const humberger = document.querySelector('.humberger')
+const close = document.querySelector('.close')
+const humbergerContainer = document.querySelector('.humberger-container')
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
 nav.addEventListener('click', function(e){
@@ -16,13 +18,8 @@ nav.addEventListener('click', function(e){
 	const link = e.target
 	console.log(link)
 	if(link.classList.contains('nav-link')){
-		console.log(link)
 	const linkId = link.getAttribute('href')
-	const scrol = document.querySelector(linkId)
-	scrol.scrollIntoView({behavior: 'smooth'})
-	}
-	else{
-		console.log('huzzo')
+	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 	}
 })
 // -----------footer link--------------------//
@@ -31,7 +28,6 @@ footLink.addEventListener('click', function(e){
 	if(e.target.classList.contains('nav-link')){
 		const link = e.target
 		const linkId = link.getAttribute('href')
-		console.log(linkId)
 		document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 	}
 })
@@ -60,4 +56,17 @@ leftBtn.addEventListener('click', function(e){
 		curSlide--
 	}
 	toSlide(curSlide)
+})
+// ==========================implementing humberger functionality==================//
+humberger.addEventListener('click', function(){
+	console.log(humbergerContainer)
+	humbergerContainer.classList.add('active')
+	console.log("clicked")
+	humberger.style.visibility = 'hidden'
+})
+close.addEventListener('click', function(){
+	console.log(humbergerContainer)
+	humbergerContainer.classList.remove('active')
+	console.log("clicked")
+	humberger.style.visibility = 'visible'
 })
