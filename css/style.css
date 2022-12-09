@@ -20,12 +20,9 @@
     left: 20px;
     color: var(--green);
     font-size: 40px;
-    visibility: hidden;
+    display: none;
     z-index: 100;
     background-color: var(--gray-color);
-}
-.humberger-icon{
-    margin-top: -30px;
 }
 body{
     color: var(--white);
@@ -869,8 +866,8 @@ h5{
 }
 /* =================humberger menu=================== */
 .humberger-container{
-    /* position: sticky; */
-    top: 20px;
+    position: absolute;
+    top: 0px;
     left: -100%;
     padding: 10px;
     display: grid;
@@ -879,11 +876,11 @@ h5{
     width: 280px;
     background-color: var(--gray-color);
     transition: .5s all ease-in-out;
-    visibility: hidden;
-    z-index: 100;
+    /* visibility: hidden; */
+    z-index: 200;
 }
 .active{
-    left: 10px;
+    left: 0px;
 }
 .reponsive-nav{
     display: flex;

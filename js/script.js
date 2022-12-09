@@ -29,11 +29,13 @@ resNav.addEventListener('click', function(e){
 	console.log(link)
 	if(link.classList.contains('nav-link')){
 	const linkId = link.getAttribute('href')
-	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
+	resNav.scrollIntoView({behavior: 'smooth'})
 	humbergerContainer.style.visibility = 'hidden'
 	humbergerContainer.classList.remove('active')
+	humbergerContainer.style.left = `transformX(-100%)`
 	humberger.style.visibility = 'visible'
-	}
+}
+document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 })
 // -----------footer link--------------------//
 footLink.addEventListener('click', function(e){

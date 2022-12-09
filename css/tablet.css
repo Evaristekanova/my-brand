@@ -82,7 +82,7 @@
         display: none;
     }
     .humberger{
-        visibility: visible;
+        display: block;
     }
     .triangle{
         display: none;
