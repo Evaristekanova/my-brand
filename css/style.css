@@ -13,13 +13,19 @@
 }
 /* ----humberger------ */
 .humberger{
-    position: absolute;
-    top: 10px;
+    position: sticky;
+    height: 50px;
+    width: 100%;
+    top: 0px;
     left: 20px;
     color: var(--green);
     font-size: 40px;
-    /* visibility: hidden; */
-    z-index: 30px;
+    visibility: hidden;
+    z-index: 100;
+    background-color: var(--gray-color);
+}
+.humberger-icon{
+    margin-top: -30px;
 }
 body{
     color: var(--white);
@@ -863,7 +869,7 @@ h5{
 }
 /* =================humberger menu=================== */
 .humberger-container{
-    position: fixed;
+    /* position: sticky; */
     top: 20px;
     left: -100%;
     padding: 10px;
