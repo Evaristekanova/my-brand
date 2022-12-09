@@ -14,11 +14,12 @@
 /* ----humberger------ */
 .humberger{
     position: absolute;
-    top: 20px;
-    right: 40px;
+    top: 10px;
+    left: 20px;
     color: var(--green);
     font-size: 40px;
-    visibility: hidden;
+    /* visibility: hidden; */
+    z-index: 30px;
 }
 body{
     color: var(--white);
@@ -436,6 +437,9 @@ h5{
     transform: translateX(10px);
 }
 /* ======================================== blog section ============================ */
+.navbar-blog{
+    margin-bottom: 100px;
+}
 .subscription{
     display: flex;
     align-items: center;
@@ -496,10 +500,8 @@ h5{
     background-color: var(--gray-color);
     border-radius: 8px;
 }
-.search input:focus{
-    border: none;
-}
 .search i{
+    z-index: 20;
     font-size: 22px;
     color: var(--green);
 }
@@ -675,7 +677,7 @@ h5{
 /* =========================================dashboard page========================= */
 .dashboard-container{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: row;
 }
@@ -717,22 +719,26 @@ h5{
     text-align: center;
 }
 .side-navbar-inner li a{
-    padding: 10px;
+    padding: 15px 10px;
     text-decoration: none;
     font-size: 20x;
     color: var(--white);
+    /* background-color: var(--gray-color); */
     transition: all .3s ease-in-out;
 }
 .side-navbar-inner li a:hover{
-    background-color: var(--gray-color);
+    background-color: var(--dark-green);
 }
 .active-dash-link{
     background-color: var(--gray-color);
 }
 /* -------------------dashboard information------------------- */
+#dash{
+    overflow: visible;
+}
 .bashboard-information{
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    /* height: 100%; */
     padding: 10px 60px;
     display: flex;
     flex-direction: column;
@@ -756,6 +762,7 @@ h5{
     width: 87%;
     background-color: var(--white);
     margin-bottom: 25px;
+
 }
 .dash-blog{
     display: flex;
@@ -764,7 +771,7 @@ h5{
     align-items: center;
     position: relative;
     width: 85%;
-    height: 15vh;
+    height: 20vh;
     background-color: var(--gray-color);
     margin-bottom: 30px;
 
@@ -856,9 +863,10 @@ h5{
 }
 /* =================humberger menu=================== */
 .humberger-container{
-    bottom: 20px;
     position: fixed;
-    right: 3%;
+    top: 20px;
+    left: 10px;
+    /* right: 100%; */
     padding: 10px;
     display: grid;
     justify-items: center;
@@ -870,7 +878,7 @@ h5{
     z-index: 100;
 }
 .active{
-    left: 55.5%
+    right: 0;
 }
 .reponsive-nav{
     display: flex;
@@ -893,18 +901,27 @@ h5{
     position: relative;
     display: grid;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
     font-size: 35px;
     height: 40px;
     text-align: right;
 }
 .close-div div{
-    position: absolute;
-    top: -8px;
-    right: 30px;
-    /* bottom: -10px; */
-    /* padding: 10px; */
     width: 60px;
     height: 100%;
+}
+/* ========================================add blog page====================== */
+.file{
+    width: 85%;
+    height: 15%;
+    background-color: var(--gray-color);
+    margin-bottom: 30px;
+    vertical-align: middle;
+}
+#editor{
+    width: 85%;
+}
+.ql-toolbar{
+    width: 85%
 }

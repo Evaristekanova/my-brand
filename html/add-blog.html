@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/1cb130eb6d.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <div class="dashboard-container">
+            <div class="dashboard-navbar">
+                <div class="profile-icon dashboard-logo">
+                    <i class="fa-solid fa-lock-open"></i>
+                </div>
+                <div class="side-navbar">
+                    <nav>
+                        <div class="side-navbar-inner"><li><a href="./dashboard.html">Dashboard</a></li></div>
+                        <div class="side-navbar-inner"><li><a class="active-dash-link" href="#">Create Blog</a></li></div>
+                        <div class="side-navbar-inner"><li><a href="#">Subscribers</a></li></div>
+                        <div class="side-navbar-inner"><li><a href="../index.html">Logout</a></li></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="bashboard-information">
+                <h2 class="dash-title">welcome back in dashboard</h2>
+                <div class="dash-short-report">
+                    <h3>Total Blogs: <span class="blog=nbr">6</span></h3>
+                </div>
+                <div class="division-line"></div>
+                <!-- blog 1 -->
+                <div class="dash-blog">
+                    <img class="blog-image" src="../img/chrome.jpg" alt="">
+                    <div class="inner-dash">
+                        <div class="dash-blog-title">how to create your own website</div>
+                        <div class="dash-blog-btns">
+                            <button class="btn">Update</button>
+                            <button class="btn">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-container">
+                    <input class="file" type="file">
+                    <div id="editor">
+                        <p>replace title here</p>
+                        <p>replace your text here <strong>bold</strong> text</p>
+                        <p><br></p>
+                    </div>
+            </div>
+        </div>
+    </header>
+</body>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    var quill = new Quill('#editor', {
+      theme: 'snow'
+    });
+  </script>
+</html>

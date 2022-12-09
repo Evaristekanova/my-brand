@@ -1,6 +1,6 @@
 'use strict'
 ////////////////////selection//////////////
-
+console.log('script')
 const nav = document.querySelector('.navbar')
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
@@ -9,7 +9,7 @@ const leftBtn = document.querySelector('.arrow-right')
 const link = document.querySelector('.nav-link')
 const footLink = document.querySelector('.flink')
 const humberger = document.querySelector('.humberger')
-const close = document.querySelector('.close')
+const closeHumberger = document.querySelector('.close')
 const humbergerContainer = document.querySelector('.humberger-container')
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
@@ -57,16 +57,18 @@ leftBtn.addEventListener('click', function(e){
 	}
 	toSlide(curSlide)
 })
-// ==========================implementing humberger functionality==================//
+// ==========================implementation humberger functionality==================//
 humberger.addEventListener('click', function(){
+	console.log('clicked')
 	console.log(humbergerContainer)
+	humbergerContainer.style.visibility = 'visible'
 	humbergerContainer.classList.add('active')
 	console.log("clicked")
 	humberger.style.visibility = 'hidden'
 })
-close.addEventListener('click', function(){
+closeHumberger.addEventListener('click', function(){
 	console.log(humbergerContainer)
+	humbergerContainer.style.visibility = 'hidden'
 	humbergerContainer.classList.remove('active')
-	console.log("clicked")
 	humberger.style.visibility = 'visible'
 })
