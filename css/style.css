@@ -619,11 +619,15 @@ h5{
 	border: none;
 }
 /* ======================================login page==========================*/
+.login-header{
+    width: 100%;
+    height: 100vh;
+}
 .login-contanier{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* align-items: center; */
+    align-items: center;
     max-width: 300px;
     margin: 0 auto;
     margin-top: 90px;
@@ -680,12 +684,17 @@ h5{
 /* =========================================dashboard page========================= */
 .dashboard-container{
     width: 100%;
-    /* height: 100%; */
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }
+.dash-section{
+    width: 100%;
+    height: 100%;
+}
 /* -----------------dashboard navigation---------------- */
 .dashboard-navbar{
+    padding-top: 100px;
     width: 20%;
     height: 100%;
     padding: 20px;
@@ -696,11 +705,18 @@ h5{
     background-color:var(--green);
 }
 .dashboard-logo{
+    height: 70px;
+    width: 70px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
     background-color: var(--gray-color);
     color: var(--green);
     margin-bottom: 30px;
+    border-radius: 50%;
 }
 .dashboard-logo i{
+    font-size: 40px;
     color: var(--green);
 }
 .side-navbar nav{
@@ -710,18 +726,11 @@ h5{
     padding: 10px 15px;
     gap: 35px;
 }
-/* .side-navbar-inner{
-    display: flex;
-    justify-content: flex-start;
-    width: 160px;
-    padding: 10px;
-    border: red solid 2px;
-} */
-.side-navbar-inner li{
-    list-style-type: none;
-    text-align: center;
+.side-navbar nav li{
+    list-style: none;
+    margin-bottom: 15px;
 }
-.side-navbar-inner li a{
+.side-navbar a{
     padding: 15px 10px;
     text-decoration: none;
     font-size: 20x;
@@ -729,8 +738,8 @@ h5{
     /* background-color: var(--gray-color); */
     transition: all .3s ease-in-out;
 }
-.side-navbar-inner li a:hover{
-    background-color: var(--dark-green);
+.side-navbar li a:hover{
+    background-color: var(--gray-color);
 }
 .active-dash-link{
     background-color: var(--gray-color);
@@ -740,7 +749,7 @@ h5{
     overflow: visible;
 }
 .bashboard-information{
-    width: 100%;
+    width: 80%;
     /* height: 100%; */
     padding: 10px 60px;
     display: flex;
@@ -762,7 +771,7 @@ h5{
 }
 .division-line{
     height: 3px;
-    width: 87%;
+    width: 85%;
     background-color: var(--white);
     margin-bottom: 25px;
 
@@ -774,6 +783,7 @@ h5{
     align-items: center;
     position: relative;
     width: 85%;
+    /* margin: auto; */
     height: 20vh;
     background-color: var(--gray-color);
     margin-bottom: 30px;
@@ -781,7 +791,7 @@ h5{
 }
 .inner-dash{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     gap: 60px;
 }
@@ -914,16 +924,16 @@ h5{
     height: 100%;
 }
 /* ========================================add blog page====================== */
-.file{
+.file-div{
     width: 85%;
     height: 15%;
     background-color: var(--gray-color);
     margin-bottom: 30px;
     vertical-align: middle;
 }
-#editor{
+#editor, .ql-toolbar{
     width: 85%;
 }
-.ql-toolbar{
+/* .ql-toolbar{
     width: 85%
-}
+} */

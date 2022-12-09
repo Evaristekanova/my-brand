@@ -5,33 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/phone.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/1cb130eb6d.js" crossorigin="anonymous"></script>
     <title>Dashboard</title>
 </head>
 <body>
-    <header id="dash">
-        <div class="nav-container navbar-blog">
-            <nav class="navbar navresp">
-                <div class="side-navbar-inner"><li><a class="active-dash-link" href="#">Dashboard</a></li></div>
-                <div class="side-navbar-inner"><li><a href="./add-blog.html">Create Blog</a></li></div>
-                <div class="side-navbar-inner"><li><a href="#">Subscribers</a></li></div>
-                <div class="side-navbar-inner"><li><a href="../index.html">Logout</a></li></div>
-            </nav>
-        </div>
+    <div class="humberger"><span class="humberger-icon"><i class="fa-solid fa-bars"></i></span></i></div>
+    <section class="dash-section">
         <div class="dashboard-container">
-            <!-- <div class="dashboard-navbar">
-                <div class="profile-icon dashboard-logo">
+            <div class="dashboard-navbar">
+                <div class="dashboard-logo">
                     <i class="fa-solid fa-lock-open"></i>
                 </div>
                 <div class="side-navbar">
-                    <nav>
-                        <div class="side-navbar-inner"><li><a class="active-dash-link" href="#">Dashboard</a></li></div>
-                        <div class="side-navbar-inner"><li><a href="./add-blog.html">Create Blog</a></li></div>
-                        <div class="side-navbar-inner"><li><a href="#">Subscribers</a></li></div>
-                        <div class="side-navbar-inner"><li><a href="../index.html">Logout</a></li></div>
+                    <nav class="navresp">
+                        <li class="active-dash-link"><a class="nav-link active-dash-link" href="#home">Dashboard</a></li>
+                        <li><a class="nav-link" href="./add-blog.html">Create Blog</a></li>
+                        <li><a class="nav-link" href="../index.html">Logout</a></li> 
                     </nav>
                 </div>
-            </div> -->
+            </div>
             <div class="bashboard-information">
                 <h2 class="dash-title">welcome back in dashboard</h2>
                 <div class="dash-short-report">
@@ -44,8 +38,8 @@
                     <div class="inner-dash">
                         <div class="dash-blog-title">how to create your own website</div>
                         <div class="dash-blog-btns">
-                            <button class="btn">Update</button>
-                            <button class="btn">Delete</button>
+                            <a href="./add-blog.html" class="btn">Update</a>
+                            <a href="#" class="btn">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -71,8 +65,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="dash-btn"><a href="#" class="btn">view more blogs</a></div>
+                <!-- <div class="dash-btn"><a href="#" class="btn">view more blogs</a></div> -->
+            </div>
         </div>
-    </header>
+    </section>
 </body>
 </html>

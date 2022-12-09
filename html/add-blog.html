@@ -11,14 +11,6 @@
 </head>
 <body>
     <header id="dash">
-        <div class="nav-container navbar-blog">
-            <nav class="navbar navresp">
-                <div class="side-navbar-inner"><li><a class="active-dash-link" href="#">Dashboard</a></li></div>
-                <div class="side-navbar-inner"><li><a href="./add-blog.html">Create Blog</a></li></div>
-                <div class="side-navbar-inner"><li><a href="#">Subscribers</a></li></div>
-                <div class="side-navbar-inner"><li><a href="../index.html">Logout</a></li></div>
-            </nav>
-        </div>
         <div class="dashboard-container">
             <!-- <div class="dashboard-navbar">
                 <div class="profile-icon dashboard-logo">
@@ -33,6 +25,18 @@
                     </nav>
                 </div>
             </div> -->
+            <div class="dashboard-navbar">
+                <div class="dashboard-logo">
+                    <i class="fa-solid fa-lock-open"></i>
+                </div>
+                <div class="side-navbar">
+                    <nav class="navresp">
+                        <li><a class="nav-link" href="./dashboard.html">Dashboard</a></li>
+                        <li ><a class="nav-link active-dash-link" href="./add-blog.html">Create Blog</a></li>
+                        <li><a class="nav-link" href="../index.html">Logout</a></li> 
+                    </nav>
+                </div>
+            </div>
             <div class="bashboard-information">
                 <h2 class="dash-title">welcome back in dashboard</h2>
                 <div class="dash-short-report">
@@ -51,7 +55,7 @@
                     </div>
                 </div>
                 <div class="comment-container">
-                    <input class="file" type="file">
+                    <div class="file-div"><input class="file" type="file"></div>
                     <div id="editor">
                         <p>replace title here</p>
                         <p>replace your text here <strong>bold</strong> text</p>

@@ -27,6 +27,9 @@
     body{
         font-size: 17px;
     }
+    .nav-for-all{
+        display: none;
+    }
     header{
         overflow:visible;
         position: relative;
@@ -50,7 +53,6 @@
         width: 48%;
         height: 100%;
         z-index: 5;
-
     }
     .photo-container .home-image{
         height: 100%;
@@ -75,6 +77,22 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+    }
+}
+@media only screen and (max-width:840px){
+    .dash-blog{
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        gap: 30px;
+        align-items: center;
+        position: relative;
+        width: 50%;
+        margin: auto;
+        height: 40vh;
+        background-color: var(--gray-color);
+        margin-bottom: 30px;
+    
     }
 }
 @media only screen and (max-width:790px) {
