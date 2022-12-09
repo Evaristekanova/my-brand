@@ -30,6 +30,9 @@ resNav.addEventListener('click', function(e){
 	if(link.classList.contains('nav-link')){
 	const linkId = link.getAttribute('href')
 	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
+	humbergerContainer.style.visibility = 'hidden'
+	humbergerContainer.classList.remove('active')
+	humberger.style.visibility = 'visible'
 	}
 })
 // -----------footer link--------------------//
