@@ -854,3 +854,57 @@ h5{
 .footer-copyrigth{
     text-align: center;
 }
+/* =================humberger menu=================== */
+.humberger-container{
+    bottom: 20px;
+    position: fixed;
+    right: 3%;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 280px;
+    background-color: var(--gray-color);
+    transition: .4s all ease-in-out;
+    visibility: hidden;
+    z-index: 100;
+}
+.active{
+    left: 55.5%
+}
+.reponsive-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.reponsive-nav li{
+    list-style: none;
+}
+.reponsive-nav li a{
+    list-style: none;
+    display: block;
+    padding: 5px 10px;
+    transition:  all .3s ease-in-out;
+}
+.reponsive-nav li a:hover{
+    background-color: var(--dark-green);
+}
+.close-div{
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 35px;
+    height: 40px;
+    text-align: right;
+}
+.close-div div{
+    position: absolute;
+    top: -8px;
+    right: 30px;
+    /* bottom: -10px; */
+    /* padding: 10px; */
+    width: 60px;
+    height: 100%;
+}
