@@ -35,7 +35,6 @@ resNav.addEventListener('click', function(e){
 	humbergerContainer.style.left = `transformX(-100%)`
 	humberger.style.visibility = 'visible'
 }
-document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 })
 // -----------footer link--------------------//
 footLink.addEventListener('click', function(e){
