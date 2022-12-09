@@ -865,8 +865,7 @@ h5{
 .humberger-container{
     position: fixed;
     top: 20px;
-    left: 10px;
-    right: 100%;
+    left: -100%;
     padding: 10px;
     display: grid;
     justify-items: center;
@@ -878,7 +877,7 @@ h5{
     z-index: 100;
 }
 .active{
-    right: 0;
+    left: 10px;
 }
 .reponsive-nav{
     display: flex;
