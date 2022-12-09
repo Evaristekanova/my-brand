@@ -877,9 +877,9 @@ h5{
     visibility: hidden;
     z-index: 100;
 }
-.active{
+/* .active{
     right: 0;
-}
+} */
 .reponsive-nav{
     display: flex;
     flex-direction: column;
