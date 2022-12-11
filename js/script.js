@@ -16,8 +16,8 @@ const normalLink = document.querySelectorAll('.nav-link')
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
 navContainer.addEventListener('click', function(e){
-	e.preventDefault()
 	if(e.target.classList.contains('nav-link')){
+		e.preventDefault()
 		normalLink.forEach(el=>el.classList.remove('active-normal-link'))
 		e.target.classList.add('active-normal-link')
 	}
@@ -26,7 +26,7 @@ nav.addEventListener('click', function(e){
 	// e.preventDefault()
 	const link = e.target
 	if(link.classList.contains('nav-link')){
-	const linkId = link.getAttribute('href')
+		const linkId = link.getAttribute('href')
 	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 	}
 })
