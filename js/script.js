@@ -1,6 +1,5 @@
 'use strict'
 ////////////////////selection//////////////
-console.log('script')
 const nav = document.querySelector('.navbar')
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
@@ -12,12 +11,20 @@ const humberger = document.querySelector('.humberger-icon')
 const closeHumberger = document.querySelector('.close')
 const humbergerContainer = document.querySelector('.humberger-container')
 const resNav = document.querySelector('.reponsive-nav')
+const navContainer = document.querySelector('.nav-container')
+const normalLink = document.querySelectorAll('.nav-link')
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
-nav.addEventListener('click', function(e){
+navContainer.addEventListener('click', function(e){
 	e.preventDefault()
+	if(e.target.classList.contains('nav-link')){
+		normalLink.forEach(el=>el.classList.remove('active-normal-link'))
+		e.target.classList.add('active-normal-link')
+	}
+})
+nav.addEventListener('click', function(e){
+	// e.preventDefault()
 	const link = e.target
-	console.log(link)
 	if(link.classList.contains('nav-link')){
 	const linkId = link.getAttribute('href')
 	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
@@ -26,20 +33,15 @@ nav.addEventListener('click', function(e){
 resNav.addEventListener('click', function(e){
 	e.preventDefault()
 	const link = e.target
-	console.log(link)
 	if(link.classList.contains('nav-link')){
 	const linkId = link.getAttribute('href')
-	resNav.scrollIntoView({behavior: 'smooth'})
-	humbergerContainer.style.visibility = 'hidden'
-	humbergerContainer.classList.remove('active')
-	humbergerContainer.style.left = `transformX(-100%)`
-	humberger.style.visibility = 'visible'
+	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 }
 })
 // -----------footer link--------------------//
 footLink.addEventListener('click', function(e){
 	e.preventDefault()
-	if(e.target.classList.contains('nav-link')){
+	if(e.target.classList.contains('f-link')){
 		const link = e.target
 		const linkId = link.getAttribute('href')
 		document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
@@ -73,15 +75,11 @@ leftBtn.addEventListener('click', function(e){
 })
 // ==========================implementation humberger functionality==================//
 humberger.addEventListener('click', function(){
-	console.log('clicked')
-	console.log(humbergerContainer)
 	humbergerContainer.style.visibility = 'visible'
 	humbergerContainer.classList.add('active')
-	console.log("clicked")
 	humberger.style.visibility = 'hidden'
 })
 closeHumberger.addEventListener('click', function(){
-	console.log(humbergerContainer)
 	humbergerContainer.style.visibility = 'hidden'
 	humbergerContainer.classList.remove('active')
 	humberger.style.visibility = 'visible'

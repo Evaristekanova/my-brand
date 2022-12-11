@@ -32,8 +32,8 @@ body{
     background-color: var(--dark-blue);
 }
 header{
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
 }
@@ -121,7 +121,17 @@ input{
     color: var(--white);
 }
 /* -------------navigation--------------- */
+/* .nav-holder{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    z-index: 200;
+    margin-bottom: 100px;
+} */
 .nav-container{
+    /* position:sticky; */
     float: right;
     display: flex;
     align-items: center;
@@ -131,7 +141,8 @@ input{
     background-color: var(--gray-color);
     border-radius: 0px 0px 0px 20px;
     margin-bottom: 10px;
-    z-index: 10;
+    box-shadow: 3px 5px 5px --gray-color;
+    z-index: 200;
 }
 .navbar{
     padding: 5px 20px;
@@ -156,12 +167,16 @@ input{
     list-style: none;
     background-color: var(--dark-green);
 }
+.active-normal-link{
+    background-color: var(--dark-green);
+}
 /* ---------home section----------------- */
 .head-container{
-    /* margin-top: -10px; */
+    position: relative;
     width: 100%;
     padding: 20px 70px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
@@ -542,6 +557,20 @@ h5{
     text-align: center;
     color: var(--green);
 }
+.blog-name{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 85%;
+    margin: auto;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.blog-title-dashboard{
+    color: var(--white);
+}
 /* blog button division */
 .blog-button-div{
     display: flex;
@@ -628,9 +657,10 @@ h5{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    max-width: 300px;
+    max-width: 350px;
     margin: 0 auto;
     margin-top: 90px;
+    box-shadow: 5px 5px 8px;
     background-color:var(--gray-color);
 }
 .profile-icon{
@@ -649,17 +679,21 @@ h5{
     font-size: 40px;
     color: var(--dark-blue);
 }
+label, 
+.forgot-password{
+    font-size: 16px;
+}
 .login-input,
 .reset-password{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-bottom: 25px;
-    /* border: #27AE60 solid 1px; */
 }
 .login-input input{
+    display: block;
     line-height: 2.5;
     padding: 5px 10px;
     background-color: var(--dark-blue);
@@ -683,6 +717,7 @@ h5{
 }
 /* =========================================dashboard page========================= */
 .dashboard-container{
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -693,17 +728,6 @@ h5{
     height: 100%;
 }
 /* -----------------dashboard navigation---------------- */
-.dashboard-navbar{
-    padding-top: 100px;
-    width: 20%;
-    height: 100%;
-    padding: 20px;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:var(--green);
-}
 .dashboard-logo{
     height: 70px;
     width: 70px;
@@ -745,16 +769,62 @@ h5{
     background-color: var(--gray-color);
 }
 /* -------------------dashboard information------------------- */
-#dash{
+.dashboard-blog-container{
+    width: 80%;
+    padding: 30px 40px;
+}
+.dash-title{
+    margin: 20px 0 20px 0;
+    text-align: center;
+}
+.dashboard-short-description{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.dashboard-short-description div{
+    width: 200px;
+    height: 10vh;
+    background-color: var(--gray-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.message-division{
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.visitor{
+    text-align: center;
+    width: 250px;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+.user{
+    margin-bottom: 10px;
+}
+.user h4{
+    color: var(--green);
+}
+.user h6{
+    font-weight: 300;
+}
+/* #dash{
     overflow: visible;
 }
 .bashboard-information{
     width: 80%;
-    /* height: 100%; */
+    /* height: 100%; *
     padding: 10px 60px;
     display: flex;
     flex-direction: column;
-    /* gap: 20px; */
+    /* gap: 20px; 
 }
 .dash-title{
     margin: 10px;
@@ -783,7 +853,7 @@ h5{
     align-items: center;
     position: relative;
     width: 85%;
-    /* margin: auto; */
+    /* margin: auto; *
     height: 20vh;
     background-color: var(--gray-color);
     margin-bottom: 30px;
@@ -818,7 +888,7 @@ h5{
 .dash-btn{
     max-width: 220px;
     padding: 10px 10px;
-}
+} */
 /* ==========================================footer========================= */
 .footer-line{
     height: 3px;
@@ -864,8 +934,14 @@ h5{
     color: var(--green);
     font-size: 25px;
 }
-.footer-icons a{
+.f-link{
+    color: var(--white);
     text-decoration: none;
+}
+.f-link:hover{
+    color: var(--green);
+}
+.footer-icons a{
     color: var(--green);
 }
 .footer-icons i{
@@ -876,7 +952,8 @@ h5{
 }
 /* =================humberger menu=================== */
 .humberger-container{
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     top: 0px;
     left: -100%;
     padding: 10px;
@@ -932,7 +1009,7 @@ h5{
     vertical-align: middle;
 }
 #editor, .ql-toolbar{
-    width: 85%;
+    width: 95%;
 }
 /* .ql-toolbar{
     width: 85%
