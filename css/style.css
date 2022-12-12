@@ -142,8 +142,21 @@ input{
     border-radius: 0px 0px 0px 20px;
     margin-bottom: 10px;
     box-shadow: 3px 5px 5px --gray-color;
-    z-index: 200;
 }
+.sticky {
+    position: fixed;
+    background-color: var(--gray-color);
+    float: right;
+    display: flex;
+    align-items: center;
+    width: 75%;
+    right: 20px;
+    height: 55px;
+    box-shadow: 3px 5px 5px rgb(8, 8, 8);
+    border-radius: 0 0 0 20px;
+    z-index: 100;
+    transition: all .4s ease-in-out;
+  }
 .navbar{
     padding: 5px 20px;
     width: 100%;
@@ -978,6 +991,8 @@ label,
     list-style: none;
 }
 .reponsive-nav li a{
+    color: var(--white);
+    text-decoration: none;
     list-style: none;
     display: block;
     padding: 5px 10px;

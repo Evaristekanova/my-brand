@@ -1,5 +1,6 @@
 'use strict'
 ////////////////////selection//////////////
+const fullHeader = document.querySelector('#home')
 const nav = document.querySelector('.navbar')
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
@@ -13,6 +14,17 @@ const humbergerContainer = document.querySelector('.humberger-container')
 const resNav = document.querySelector('.reponsive-nav')
 const navContainer = document.querySelector('.nav-container')
 const normalLink = document.querySelectorAll('.nav-link')
+// ==========================implementation humberger functionality==================//
+humberger.addEventListener('click', function(){
+	humbergerContainer.style.visibility = 'visible'
+	humbergerContainer.classList.add('active')
+	humberger.style.visibility = 'hidden'
+})
+closeHumberger.addEventListener('click', function(){
+	humbergerContainer.style.visibility = 'hidden'
+	humbergerContainer.classList.remove('active')
+	humberger.style.visibility = 'visible'
+})
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
 navContainer.addEventListener('click', function(e){
@@ -31,9 +43,9 @@ nav.addEventListener('click', function(e){
 	}
 })
 resNav.addEventListener('click', function(e){
-	e.preventDefault()
 	const link = e.target
 	if(link.classList.contains('nav-link')){
+		e.preventDefault()
 	const linkId = link.getAttribute('href')
 	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 }
@@ -73,14 +85,18 @@ leftBtn.addEventListener('click', function(e){
 	}
 	toSlide(curSlide)
 })
-// ==========================implementation humberger functionality==================//
-humberger.addEventListener('click', function(){
-	humbergerContainer.style.visibility = 'visible'
-	humbergerContainer.classList.add('active')
-	humberger.style.visibility = 'hidden'
-})
-closeHumberger.addEventListener('click', function(){
-	humbergerContainer.style.visibility = 'hidden'
-	humbergerContainer.classList.remove('active')
-	humberger.style.visibility = 'visible'
-})
+// =======================IMPLEMENTING STICKY NAVIGATION==========================//
+const stickyNav = function (entries) {
+	entries.forEach((entry) => {
+	  if (!entry.isIntersecting) navContainer.classList.add('sticky');
+	  else navContainer.classList.remove('sticky');
+	});
+  };
+//   const navHeight = nav.getBoundingClientRect().height;
+//   console.log(navHeight)
+  const intersectionAPI = new IntersectionObserver(stickyNav, {
+	root: null,
+	threshold: 0,
+	rootMargin: `-90px`,
+  });
+  intersectionAPI.observe(fullHeader);
