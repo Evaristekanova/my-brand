@@ -626,6 +626,9 @@ h5{
 	/* justify-content: space-between; */
 	gap: 1.2rem;
 }
+.login-form{
+    padding-top: 10px;
+}
 .form-to-fill{
 	display: flex;
 	justify-content: space-between;
@@ -673,7 +676,7 @@ h5{
     max-width: 350px;
     margin: 0 auto;
     margin-top: 90px;
-    box-shadow: 5px 5px 8px;
+    box-shadow: 5px 5px 8px rgb(8, 8, 8);
     background-color:var(--gray-color);
 }
 .profile-icon{
@@ -711,6 +714,7 @@ label,
     padding: 5px 10px;
     background-color: var(--dark-blue);
     border: none;
+    color: var(--white);
 }
 .reset-password{
     color: var(--white);
@@ -720,6 +724,15 @@ label,
     color: var(--green);
 }
 .login-btn{
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--green);
+    border: none;
+}
+.signup-btn{
     font-size: 23px;
     text-align: center;
     cursor: pointer;
