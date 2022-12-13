@@ -28,15 +28,15 @@
                 </div>
             </div>
             <div class="humberger-container">
-            <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
-            <nav class="reponsive-nav">
-                <li><a class="nav-link" href="#home">Home</a></li>
-                <li><a class="nav-link" href="#skills">About Me</a></li>
-                <li><a class="nav-link" href="#mywork">My work</a></li>
-                <li><a class="nav-link" href="#blogs">Blogs</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-                <li><a href="./html/login.html">Login</a></li>  
-            </nav>
+                <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
+                <nav class="reponsive-nav">
+                    <li><a class="nav-link" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="#skills">About Me</a></li>
+                    <li><a class="nav-link" href="#mywork">My work</a></li>
+                    <li><a class="nav-link" href="#blogs">Blogs</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                    <li><a href="./html/login.html">Login</a></li>  
+                </nav>
             </div>
         <!-- </div> -->
             <!-- triangle symbol -->
@@ -288,19 +288,24 @@
 					<p>+250780177117</p>
 				</div>
 			</div>
-            <div class="login">
-				<div class="form-to-fill">
-					<input type="text" placeholder="Fist name">
-					<input class="sinput" type="text" placeholder="Last name">
-				</div>
-				<div class="form-to-fill">
-					<input type="email" placeholder="example@gmal.com">
-				</div>
-				<div class="form-to-fill">
-					<textarea name="" id="textarea" placeholder="your message here please"></textarea>
-				</div>
-				<button class="btn btn-send">submit</button>
-			</div>
+            <form action="" class="contact-form">
+                <div class="login">
+                    <div class="form-to-fill">
+                        <input type="text" id="contact-fname" placeholder="Fist name">
+                        <input id="contact-sname" type="text" placeholder="Last name">
+                    </div>
+                    <p class="error-fname"></p>
+                    <div class="form-to-fill">
+                        <input type="email" id="contact-email" placeholder="example@gmal.com" required>
+                    </div>
+                    <p class="error-email"></p>
+                    <div class="form-to-fill">
+                        <textarea name="" id="textarea" placeholder="your message here please"></textarea>
+                    </div>
+                    <p class="error-textarea"></p>
+                    <button class="btn contact-btn">submit</button>
+                </div>
+            </form>
      </div>
    </section>
    <footer class="footer">

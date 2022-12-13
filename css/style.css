@@ -650,11 +650,16 @@ h5{
 .form-to-fill textarea::placeholder{
 	font-size: 120%;
 }
+.contact-form p{
+    color: red;
+    font-size: 16px;
+}
 #textarea{
+    outline: none;
 	height: 7rem;
 }
 /* send button */
-.btn-send{
+.contact-btn{
 	background-color: var(--green);
 	cursor:pointer;
 	width: 30%;

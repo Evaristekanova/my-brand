@@ -14,6 +14,16 @@ const humbergerContainer = document.querySelector('.humberger-container')
 const resNav = document.querySelector('.reponsive-nav')
 const navContainer = document.querySelector('.nav-container')
 const normalLink = document.querySelectorAll('.nav-link')
+// -----------contact form variable decralation-------////
+const emailContact = document.getElementById('contact-email')
+const firstName = document.getElementById('contact-fname')
+const secondName = document.getElementById('contact-sname')
+const textarea = document.getElementById('textarea')
+const contactForm = document.querySelector('.contact-form')
+const errorFname = document.querySelector('.error-fname')
+const errorSname = document.querySelector('.error-sname')
+const emailError = document.querySelector('.error-email')
+const textareaError = document.querySelector('.error-textarea')
 // ==========================implementation humberger functionality==================//
 humberger.addEventListener('click', function(){
 	humbergerContainer.style.visibility = 'visible'
@@ -100,3 +110,26 @@ const stickyNav = function (entries) {
 	rootMargin: `-90px`,
   });
   intersectionAPI.observe(fullHeader);
+
+//   ==========================contact form validation ========================//
+contactForm.addEventListener('submit', function(e){
+	e.preventDefault()
+	const message = []
+	const messageText = []
+	if(firstName.value == '' || secondName.value == ''){
+		message.push("Names are required")
+		errorFname.innerHTML = message.join(',')
+	}
+	if(textarea.value.trim() == ''|| textarea.value == ''){
+		messageText.push('please write message')
+		textareaError.innerHTML = messageText.join(' ')
+	}
+	else{
+	textarea.value = firstName.value = secondName. value = emailContact.value = ''
+	errorFname.innerTHML = 'i'
+	errorSname.innerTHML = ''
+	emailError.innerTHML= ''
+	textareaError.innerTHML = ''
+
+	}
+})

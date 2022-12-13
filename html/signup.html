@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/phone.css">
-    <script src="https://kit.fontawesome.com/1cb130eb6d.js" crossorigin="anonymous"></script>  
+    <script src="https://kit.fontawesome.com/1cb130eb6d.js" crossorigin="anonymous"></script>
+    <script defer src="../js/signup.js"></script>
 </head>
 <body>
     <div class="humberger"><span class="humberger-icon"><i class="fa-solid fa-bars"></i></span></i></div>
@@ -42,10 +43,12 @@
                     <div class="login-input">
                      <label for="create-password">Password</label>
                      <input type="password" id="create-password" placeholder="Enter your password" required>
+                     <p class="error"></p>
                     </div>
                     <div class="login-input">
                      <label for="confirm-password">Confirm Password</label>
                      <input type="password" id="confirm-password" placeholder="Confirm password" required>
+                     <p class="error-confirm"></p>
                     </div>
                     <div class="reset-password">
                      <p class="forgot-password">already have account? <a href="./login.html">login</a></p>
