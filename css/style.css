@@ -479,6 +479,9 @@ h5{
     width: 30vw;
     margin-bottom: 30px;
 }
+.read-whole-blog{
+    color: var(--green);
+}
 .subscription input{
     font-size: 16px;
     color: var(--white);
@@ -550,6 +553,11 @@ h5{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
+.blog img{
+    border-radius: 15px;
 }
 /* blog image */
 .blog-image{
@@ -559,6 +567,7 @@ h5{
     width: 100%;
     border-radius: 10px 10px 0 0;
     margin: 0 auto;
+    border-radius: 15px;
 }
 .article{
     /* border: 2px solid red; */
@@ -625,6 +634,14 @@ h5{
 	flex-direction: column;
 	/* justify-content: space-between; */
 	gap: 1.2rem;
+}
+.alert{
+    padding: 10px 15px;
+    text-align: center;
+    background-color: var(--dark-green);
+    font-weight: 400;
+    border-radius: 10px;
+    display: none;
 }
 .login-form{
     padding-top: 10px;

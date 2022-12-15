@@ -24,13 +24,14 @@ const errorFname = document.querySelector('.error-fname')
 const errorSname = document.querySelector('.error-sname')
 const emailError = document.querySelector('.error-email')
 const textareaError = document.querySelector('.error-textarea')
+const alertMsg = document.querySelector('.alert')
 // ==========================implementation humberger functionality==================//
-humberger.addEventListener('click', function(){
+const humbergerIcon = humberger.addEventListener('click', function(){
 	humbergerContainer.style.visibility = 'visible'
 	humbergerContainer.classList.add('active')
 	humberger.style.visibility = 'hidden'
 })
-closeHumberger.addEventListener('click', function(){
+const humbergerCloseIcon = closeHumberger.addEventListener('click', function(){
 	humbergerContainer.style.visibility = 'hidden'
 	humbergerContainer.classList.remove('active')
 	humberger.style.visibility = 'visible'
@@ -125,11 +126,13 @@ contactForm.addEventListener('submit', function(e){
 		textareaError.innerHTML = messageText.join(' ')
 	}
 	else{
-	textarea.value = firstName.value = secondName. value = emailContact.value = ''
-	errorFname.innerTHML = 'i'
-	errorSname.innerTHML = ''
-	emailError.innerTHML= ''
-	textareaError.innerTHML = ''
-
+		textarea.value = firstName.value = secondName. value = emailContact.value = ''
+		errorFname.innerHTML = ''
+		emailError.innerHTML= ''
+		textareaError.innerHTML = ''
+		alertMsg.style.display = 'block'
+		setTimeout(()=>{
+		alertMsg.style.display = 'none'
+		}, 3000)
 	}
 })

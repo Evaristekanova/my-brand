@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/dash.css">
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-  <title>Document</title>
+  <title>Add blog</title>
+  <script defer src="../js/addToLocalStorage.js" type="module"></script>
 </head>
 <body>
   <div class="layout">
@@ -35,6 +36,7 @@
           <form name="blog">
             <input type="file" id="ffile" placeholder="Add title">
             <input type="text" id="ftitle" placeholder="Add title">
+            <input type="text" id="small-description" placeholder="Add description">
             <div id="editor">
               <p>Hello World!</p>
               <p>Some initial <strong>bold</strong> text</p>

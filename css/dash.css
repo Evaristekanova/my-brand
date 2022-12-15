@@ -17,6 +17,9 @@ body {
   outline: 0;
   box-sizing: border-box;
 }
+input{
+  outline: none;
+}
 em {
   font-style: normal;
 }
@@ -278,6 +281,7 @@ form input {
   color: var(--white);
   border: 1px solid white;
   margin: 20px 0 10px 0;
+  height: 70px;
 }
 .main-header .main-form form .button {
   width: 50%;
