@@ -8,11 +8,11 @@ const rightBtn = document.querySelector('.arrow-left')
 const leftBtn = document.querySelector('.arrow-right')
 const link = document.querySelector('.nav-link')
 const footLink = document.querySelector('.flink')
-const humberger = document.querySelector('.humberger-icon')
 const closeHumberger = document.querySelector('.close')
 const humbergerContainer = document.querySelector('.humberger-container')
 const resNav = document.querySelector('.reponsive-nav')
 const navContainer = document.querySelector('.nav-container')
+const humberger = document.querySelector('.humberger-icon')
 const normalLink = document.querySelectorAll('.nav-link')
 // -----------contact form variable decralation-------////
 const emailContact = document.getElementById('contact-email')
@@ -24,7 +24,6 @@ const errorFname = document.querySelector('.error-fname')
 const errorSname = document.querySelector('.error-sname')
 const emailError = document.querySelector('.error-email')
 const textareaError = document.querySelector('.error-textarea')
-const alertMsg = document.querySelector('.alert')
 // ==========================implementation humberger functionality==================//
 const humbergerIcon = humberger.addEventListener('click', function(){
 	humbergerContainer.style.visibility = 'visible'
@@ -36,6 +35,7 @@ const humbergerCloseIcon = closeHumberger.addEventListener('click', function(){
 	humbergerContainer.classList.remove('active')
 	humberger.style.visibility = 'visible'
 })
+const alertMsg = document.querySelector('.alert')
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
 navContainer.addEventListener('click', function(e){
@@ -112,12 +112,13 @@ const stickyNav = function (entries) {
   });
   intersectionAPI.observe(fullHeader);
 
-//   ==========================contact form validation ========================//
+  //   ==========================contact form validation ========================//
+  const messagesStore = JSON.parse(localStorage.getItem('contactMessages', ) || '[]')
 contactForm.addEventListener('submit', function(e){
 	e.preventDefault()
 	const message = []
 	const messageText = []
-	if(firstName.value == '' || secondName.value == ''){
+	if((firstName.value == '' || firstName.value.trim() == '') || (secondName.value == '' || secondName.value.trim() == '')){
 		message.push("Names are required")
 		errorFname.innerHTML = message.join(',')
 	}
@@ -126,6 +127,16 @@ contactForm.addEventListener('submit', function(e){
 		textareaError.innerHTML = messageText.join(' ')
 	}
 	else{
+		const messageBox = {
+			fname: firstName.value,
+			sname: secondName.value,
+			email: emailContact.value,
+			message:textarea.value
+		}
+		console.log(messagesStore);
+		messagesStore.push(messageBox);
+		localStorage.setItem('contactMessages', JSON.stringify(messagesStore))
+		console.log(messageBox);
 		textarea.value = firstName.value = secondName. value = emailContact.value = ''
 		errorFname.innerHTML = ''
 		emailError.innerHTML= ''

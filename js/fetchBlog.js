@@ -14,7 +14,7 @@ blogArray.forEach(el=>{
                 <h3 class="blog-title">${el.topic}</h3>
                 <p>
                     ${el.shortDescription}
-                    <span><a class="read-whole-blog" href="#">read more</a></span>
+                    <span><a class="read-whole-blog" href="../html/readSingleBlog.html">read more</a></span>
                 </p>
             </div>
         </div>

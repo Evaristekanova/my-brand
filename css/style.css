@@ -106,6 +106,9 @@ input{
     color: var(--white);
     transition: .3s all ease-in-out;
 }
+.dlt-btn{
+    background: rgb(117, 6, 6);
+}
 .btn-cv{
     text-decoration: none;
     display: flex;
@@ -116,6 +119,9 @@ input{
 }
 .btn:hover{
     background-color: var(--dark-green);
+}
+.dlt-btn:hover{
+    background: rgb(131, 34, 34);
 }
 .btn i{
     color: var(--white);
@@ -540,6 +546,32 @@ h5{
     color: var(--green);
 }
 /* -------------blog section------------------ */
+.single-blog-page-container{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blog-list-container{
+    width: 35%;
+    margin-top: 40px;
+}
+.sinlge-blog-and-message{
+    margin-top: 40px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.blogs-block-single{
+    width: 100%;
+    /* max-height: 200vh; */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around; */
+}
 .blogs-block{
     margin-top: 40px;
     width: 100%;
@@ -547,6 +579,54 @@ h5{
     flex-direction: row;
     justify-content: space-around;
     /* align-items: center; */
+}
+/* ==================================================single blog page============================== */
+.back-to-home-btn{
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    height: 40px;
+    width: 80px;
+    /* background-color: var(--dark-green); */
+    text-align: center;
+}
+.back-to-home-btn::before{
+    content: '';
+    position: absolute;
+    top:2%;
+    left: -2px;
+    border: 2px white;
+    height: 20px;
+    width: 20px;
+    background-color:var(--dark-green);
+    text-align: center;
+    transform:rotateZ(45deg);
+    
+    z-index: -1;
+}
+.back-btn{
+    padding: 3px 11px;
+    margin-left: 5px;
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--dark-green);
+    transition: .3s all ease-in-out;
+}
+.blog-single{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
+.blog-single-list{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
 }
 .blog{
     width: 28%;
@@ -569,10 +649,58 @@ h5{
     margin: 0 auto;
     border-radius: 15px;
 }
+.article-list{
+    background-color: var(--gray-color);
+    /* max-height: 37vh; */
+    padding: 10px 15px;
+}
 .article{
     /* border: 2px solid red; */
     padding: 10px 5px;
 }
+.aBlog-listed{
+    text-align: center;
+    text-decoration: none;
+}
+.aBlog-listed{
+    text-align: center;
+    text-decoration: underline;
+}
+/*------add comment on a blog----------*/
+.blog-comment{
+    width: 100%;
+    padding: 10px;
+}
+.blog-comment > input{
+    display: block;
+    padding: 10px;
+    color: var(--white);
+    border-radius: 10px;
+    width: 70%;
+    outline: none;
+    border: 1px solid #27AE60;
+    margin-bottom: 20px;
+    background-color: #2A2E35;
+}
+.add-comment-title{
+    padding-bottom: 10px;
+    font-weight: 300;
+    color: var(--green);
+}
+#write-comment{
+    width: 70%;
+    outline: none;
+    background-color: var(--gray-color);
+    color: var(--white);
+    border: 1px solid #367E54;
+    height: 8vh;
+    padding: 10px;
+}
+#post-btn{
+    width: 60%;
+    margin-bottom: 15px;
+}
+/* ----------------------------------------- */
 .blog-title{
     font-size: 20px;
     margin-bottom: 15px;
@@ -697,16 +825,16 @@ h5{
     align-items: center;
     max-width: 350px;
     margin: 0 auto;
-    margin-top: 90px;
+    margin-top: 70px;
     box-shadow: 5px 5px 8px rgb(8, 8, 8);
     background-color:var(--gray-color);
 }
 .profile-icon{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -717,7 +845,7 @@ h5{
     font-size: 40px;
     color: var(--dark-blue);
 }
-label, 
+label,
 .forgot-password{
     font-size: 16px;
 }
@@ -774,6 +902,17 @@ label,
 .dash-section{
     width: 100%;
     height: 100%;
+}
+.message-holder{
+    width: 100%;
+}
+.dash-message{
+    width: 98%;
+    margin: auto;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom:20px;
+    background-color: var(--dark-blue);
 }
 /* -----------------dashboard navigation---------------- */
 .dashboard-logo{
@@ -872,7 +1011,7 @@ label,
     padding: 10px 60px;
     display: flex;
     flex-direction: column;
-    /* gap: 20px; 
+    /* gap: 20px;
 }
 .dash-title{
     margin: 10px;

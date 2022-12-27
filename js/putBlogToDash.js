@@ -23,16 +23,16 @@ blogArray.forEach((el, i)=>{
  blogContainerDashoard.innerHTML += content
 
 //  =====================giving life the update button===================//
+function checker(){
+    let result = confirm('Are you sure?')
+    console.log(result);
+    if(result == false){
+        e.preventDefault();
+    }
+}
 function deleteBlog(index) {
+    checker()
     blogArray.splice(index, 1);
     localStorage.setItem('addresses', JSON.stringify(blogArray))
     window.location.href = "dashboard.html"
   }
-
-// const deleteBtn  = document.querySelector('.dlt-btn')
-// console.log(deleteBtn);
-// deleteBtn.addEventListener('click', function(e){
-//     e.preventDefault()
-//     console.log('huzzo');
-//     deleteBlog()
-// })

@@ -273,6 +273,26 @@
         background-color: var(--green);
         transition: all .3s ease-in-out;
     }
+    /* =============================single blog page ================ */
+    .single-blog-page-container{
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .blog-list-container{
+        width: 100%;
+        /* margin-top: 40px; */
+    }
+    .sinlge-blog-and-message{
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;   
+    }
 }
 @media only screen and (max-width:710px) {
     body{
