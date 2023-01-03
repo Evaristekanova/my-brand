@@ -5,6 +5,8 @@ const blogTitle = document.getElementById('ftitle')
 const smallDescription = document.getElementById('small-description')
 const addBlogBtn = document.getElementById('fsubmit')
 const blogFullDescription = document.getElementById('editor')
+const failMsg = document.querySelector('.fail')
+const successMsg = document.querySelector('.success')
 const localStorageSpace = JSON.parse(localStorage.getItem("addresses") || "[]")
 
 let image ;
@@ -24,6 +26,18 @@ addBlogBtn.addEventListener('click', function(e){
     let topic = blogTitle.value
     let shortDescription= smallDescription.value
     let fullDescription = blogFullDescription.textContent
+    if(topic.trim() == '' || shortDescription.trim() == '' || fullDescription.trim() == '' || image == null){
+        const alertMsg = document.querySelector('.alert')
+        failMsg.style.display = 'block'
+        return
+    }
+    else{
+        failMsg.style.display = 'none'
+        successMsg.style.display = 'block'
+        setTimeout(()=>{
+        successMsg.style.display = 'none'
+        }, 3000)
+    }
     let id  = new Date()
     let blog = {
         messages:[],

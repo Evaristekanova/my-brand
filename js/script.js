@@ -7,7 +7,7 @@ const slides = document.querySelectorAll('.slide-component')
 const rightBtn = document.querySelector('.arrow-left')
 const leftBtn = document.querySelector('.arrow-right')
 const link = document.querySelector('.nav-link')
-const footLink = document.querySelector('.flink')
+const footLink = document.querySelector('.footer-nav')
 const closeHumberger = document.querySelector('.close')
 const humbergerContainer = document.querySelector('.humberger-container')
 const resNav = document.querySelector('.reponsive-nav')
@@ -64,11 +64,11 @@ resNav.addEventListener('click', function(e){
 // -----------footer link--------------------//
 footLink.addEventListener('click', function(e){
 	e.preventDefault()
-	if(e.target.classList.contains('f-link')){
-		const link = e.target
-		const linkId = link.getAttribute('href')
-		document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
-	}
+		if(e.target.classList.contains('f-link')){
+			const link = e.target
+			const linkId = link.getAttribute('href')
+			document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
+		}
 })
 // ================implementing slide section==============//
 ///////////////////////

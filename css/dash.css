@@ -17,6 +17,21 @@ body {
   outline: 0;
   box-sizing: border-box;
 }
+.alert{
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 10px;
+  /* display: none; */
+}
+.fail{
+  display: none;
+  background-color: rgb(117, 6, 6);
+}
+.success{
+  background-color: var(--dark-green);
+  display: none;
+}
 input{
   outline: none;
 }
