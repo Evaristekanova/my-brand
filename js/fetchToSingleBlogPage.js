@@ -10,13 +10,16 @@ const blogListContainer = document.querySelector('.blog-list-container')
 let blogArray = []
 let data = localStorage.getItem('addresses')
 blogArray = JSON.parse(data)
+let parameter=new URLSearchParams(window.location.search);
+const id = parameter.get('id');
+console.log(id);
 let content = ''
 let url
 blogArray.forEach(el=>{
     content += `
     <div class="blog-single-list">
     <div class="article-list">
-        <a href ='../html/readSingleBlog.html?id=${el.id}' id='aBlog-listed'><h3 class="blog-title">${el.topic}</h3></a>
+        <a class="blog-link" href ='../html/readSingleBlog.html?id=${el.id}' id='aBlog-listed'><h3 class="blog-title">${el.topic}</h3></a>
         <p>
             ${(el.shortDescription)}
     </div>

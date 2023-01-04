@@ -20,11 +20,12 @@ blogArray.forEach(el=>{
         <h3 class="blog-title">${el.topic}</h3>
                 <p>
                     ${el.shortDescription}
-                    <span><a class="read-whole-blog" href="../html/readSingleBlog.html">read more</a></span>
+                    <span><a class="read-whole-blog" href="../html/readSingleBlog.html?id = ${el.id}">read more</a></span>
                 </p>
             </div>
         </div>
         `
+        console.log(el.id);
 })
  const aBlog = document.createElement('div').classList.add('blog')
  blogContainer.innerHTML += content

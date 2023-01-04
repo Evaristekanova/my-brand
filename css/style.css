@@ -488,6 +488,13 @@ h5{
 .read-whole-blog{
     color: var(--green);
 }
+.blog-link{
+    text-decoration: none;
+    color: var(--green);
+}
+.blog-link:hover{
+    text-decoration: underline;
+}
 .subscription input{
     font-size: 16px;
     color: var(--white);
