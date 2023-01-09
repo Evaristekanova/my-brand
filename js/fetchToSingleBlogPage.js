@@ -1,4 +1,7 @@
 'use strict mode'
+let parameter=new URLSearchParams(window.location.search);
+const rr = parameter.get('id');
+console.log(rr);
 const singleBlog = document.querySelector('.blog-single')
 const curImage = document.getElementById('current-blog')
 const curTitle = document.getElementById('current-title')
@@ -10,16 +13,13 @@ const blogListContainer = document.querySelector('.blog-list-container')
 let blogArray = []
 let data = localStorage.getItem('addresses')
 blogArray = JSON.parse(data)
-let parameter=new URLSearchParams(window.location.search);
-const id = parameter.get('id');
-console.log(id);
 let content = ''
 let url
 blogArray.forEach(el=>{
     content += `
     <div class="blog-single-list">
     <div class="article-list">
-        <a class="blog-link" href ='../html/readSingleBlog.html?id=${el.id}' id='aBlog-listed'><h3 class="blog-title">${el.topic}</h3></a>
+        <a class="blog-link" href ='../html/readSingleBlog.html?id=${el.id}'id='aBlog-listed'><h3 class="blog-title">${el.topic}</h3></a>
         <p>
             ${(el.shortDescription)}
     </div>
@@ -32,7 +32,7 @@ url = id
     blogArray.find(blog=>{
         if(blog.id === id){
             curContentPost = `
-            <img id="current-blog" src="${blog.image}" alt="" srcset="">
+            <img id="current-blog" src="${blog.blogImg}">
             <div class="article">
                 <h3 class="blog-title" id="current-title">${blog.topic}</h3>
                 <p id="current-paragraph">
@@ -40,8 +40,8 @@ url = id
                 </p>
                 <div class="blog-comment">
                     <h3 class="add-comment-title">Add your comment</h3>
-                    <input type="text" name="" id="commenter" placeholder="Enter your names here">
-                    <textarea id="write-comment" placeholder="Add your comment here"></textarea>
+                    <input type="text" name="" id="commenter" placeholder="Enter your names here" required>
+                    <textarea id="write-comment" placeholder="Add your comment here" required></textarea>
                 </div>
                     <button class="btn post-btn" onClick = "postMessage()">post</button>
             </div>
@@ -59,6 +59,9 @@ function postMessage(){
         const writeComment = document.getElementById('write-comment')
         const commenterName = document.getElementById('commenter')
         if(blog.id === url){
+            if(writeComment.value == ''|| commenterName == ''){
+                return
+            }
             const msgObject ={
                 msg:writeComment.value,
                 commenter:commenterName.value

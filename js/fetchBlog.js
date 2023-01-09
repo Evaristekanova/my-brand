@@ -6,12 +6,12 @@ blogArray = JSON.parse(data)
 let content = ''
 
 blogArray.forEach(el=>{
-    const time = new Date()
-    const hour = time.getHours()
-    const min = time.getMinutes()
-    const month = time.getMonth()
-    const year = time.getFullYear()
-    const date = time.getDate()
+    // const time = new Date()
+    // const hour = time.getHours()
+    // const min = time.getMinutes()
+    // const month = time.getMonth()
+    // const year = time.getFullYear()
+    // const date = time.getDate()
     // <p class = "time">${year}-${month}-${date} at ${hour}:${min} </p>
     content += `
         <div class="blog">
@@ -20,12 +20,12 @@ blogArray.forEach(el=>{
         <h3 class="blog-title">${el.topic}</h3>
                 <p>
                     ${el.shortDescription}
-                    <span><a class="read-whole-blog" href="../html/readSingleBlog.html?id = ${el.id}">read more</a></span>
+                    <span><a class="read-whole-blog" href="./html/readSingleBlog.html?id=${el.id}">read more</a></span>
                 </p>
             </div>
         </div>
         `
-        console.log(el.id);
+        // console.log(el.id);
 })
  const aBlog = document.createElement('div').classList.add('blog')
  blogContainer.innerHTML += content

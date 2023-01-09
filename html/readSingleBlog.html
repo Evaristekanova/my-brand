@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/phone.css">
-    <script defer src="../js/fetchToSingleBlogPage.js"></script>
+    <!-- <script defer src="../js/fetchToSingleBlogPage.js"></script> -->
 </head>
 <body>
     <div class="back-to-home-btn">
@@ -19,9 +19,9 @@
             <div class="sinlge-blog-and-message">
                 <div class="blogs-block-single">
                     <div class="blog-single">
-                        <img id="current-blog" src="../img/work1.jpg" alt="" srcset="">
+                        <!-- <img id="current-blog" src="../img/work1.jpg" alt="" srcset=""> -->
                         <div class="article">
-                            <h3 class="blog-title" id="current-title">How to create your own website</h3>
+                            <!-- <h3 class="blog-title" id="current-title">How to create your own website</h3>
                             <p id="current-paragraph">
                                 Register your domain name. Your domain name should reflect your products or
                                 services so that your customers can easily find your business through a search.
@@ -33,27 +33,7 @@
                             </div>
                             <button class="btn post-btn">post</button>
                             <h3>comments</h3>
-                            <br>
-                                <!-- <div class="message-division">
-                                    <div class="dash-message">
-                                        <div class="user">
-                                            <h4 class="user-message">Kanova</h4>
-                                        <h6 class="user-email">kanova@gmail.com</h6>
-                                        </div>
-                                        <p class="posted-image">
-                                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        </p>
-                                    </div>
-                                </div>
-                              <div class="dash-message">
-                                  <div class="user">
-                                      <h4 class="user-message">Kanova</h4>
-                                  <h6 class="user-email">kanova@gmail.com</h6>
-                                  </div>
-                                  <p class="posted-image">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                  </p>
-                            </div> -->
+                            <br> -->
                             <div id="comment-holder">
 
                             </div>
@@ -102,4 +82,9 @@
     </section>
 
 </body>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script defer src="../js/fireSingleBlogPage.js"></script>
 </html>
