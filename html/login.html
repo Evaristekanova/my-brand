@@ -4,56 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/phone.css">
-    <link rel="stylesheet" href="../css/phone.css">
-    <script src="https://kit.fontawesome.com/1cb130eb6d.js" crossorigin="anonymous"></script>  
+    <script defer src="../js/login.js"></script>
 </head>
 <body>
+    <div class="humberger"><span class="humberger-icon"><i class="fa-solid fa-bars"></i></span></i></div>
     <header class="login-header">
-        <div class="humberger-container">
-            <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
-            <nav class="reponsive-nav">
-                <li><a class="nav-link" href="../index.html">Home</a></li>
-                <li><a class="nav-link" href="../index.html">About Me</a></li>
-                <li><a class="nav-link" href="../index.html">My work</a></li>
-                <li><a class="nav-link" href="../index.html">Blogs</a></li>
-                <li><a class="nav-link" href="../index.html">Contact</a></li>
-                <li><a class="nav-link" href="../index.html">Login</a></li>  
-            </nav>
-        </div>
-        <div class="nav-container">
-            <nav class="navbar">
-                <li><a class="nav-link" href="../index.html">Home</a></li>
-                <li><a class="nav-link" href="../index.html">About Me</a></li>
-                <li><a class="nav-link" href="../index.html">My work</a></li>
-                <li><a class="nav-link" href="../index.html">Blogs</a></li>
-                <li><a class="nav-link" href="../index.html">Contact</a></li>
-                <li><a class="nav-link" href="../index.html">Login</a></li>  
-            </nav>
-        </div>
+            <div class="nav-container nav-for-all">
+                <nav class="navbar">
+                    <li><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
+                    <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+                    <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+                    <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
+              </nav>
+            </div>
+            <div class="humberger-container">
+                <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
+                <nav class="reponsive-nav">
+                    <li><a class="nav-link" href="../index.html#home">Home</a></li>
+                    <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
+                    <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+                    <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+                    <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
+                </nav>
+            </div>
         <div class="login-contanier">
             <div class="profile-icon">
                 <i class="fa-solid fa-user"></i>
             </div>
-            <div class="login-form">
-               <div class="login-input">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-               </div>
-               <div class="login-input">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-               </div>
-               <div class="reset-password">
-                <p class="forgot-password"><a href="#">Forgot password</a></p>
-                <p class="forgot-password">don't have account? <a href="#">Sign up</a></p>
-               </div>
-               <div class="login-input">
-                <button class="btn login-btn">Submit here</button>
-               </div>
-            </div>
+            <form action="" class="login-form">
+                <div class="login-form">
+                    <div class="login-input">
+                     <label for="email-login">Email</label>
+                     <input type="email" id="email-login" placeholder="Enter your email" required>
+                    </div>
+                    <div class="login-input">
+                     <label for="password-login">Password</label>
+                     <input type="password" id="password-login" placeholder="Enter your password" required>
+                     <p class="error-login-password"></p>
+                    </div>
+                    <div class="reset-password">
+                     <p class="forgot-password"><a href="#">Forgot password</a></p>
+                     <p class="forgot-password">don't have account? <a href="./signup.html">Sign up</a></p>
+                    </div>
+                    <div class="login-input">
+                     <button class="btn login-btn">Login</button>
+                    </div>
+                 </div>
+            </form>
         </div>
     </header>
 </body>

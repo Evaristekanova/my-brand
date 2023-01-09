@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/dash.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <script defer src="../js/readContactMessage.js"></script>
+  <title>read message</title>
+</head>
+<body>
+  <div class="layout layout-dashboard">
+    <span class="header" href="#0">
+      <i class="fa fa-bars"></i>
+    </span>
+    <!-- <div class="header" href="#0">
+      <i class="fa fa-bars"></i>
+    </div> -->
+    <div class="sidebar">
+      <ul>
+        <li> <a class="sidebar-list-item" href="./dashboard.html"> <i class="fas fa-home icon"></i><em>Dashboard</em></a></li>
+        <li> <a class="sidebar-list-item" href="./add-blog.html"> <i class="fas fa-user icon"></i><em>Create blog</em></a></li>
+        <li> <a class="sidebar-list-item active-dash-link" href="#0"> <i class="fas fa-tasks icon"></i><em>Read Message</em></a></li>
+        <li> <a class="sidebar-list-item " href="../index.html"> <i class="fas fa-calendar icon"></i><em>Logout</em></a>
+        </li>
+        </li>
+      </ul>
+    </div>
+    <main class="content">
+      <div class="main-header main-header-dashboard">
+        <div class="main-form main-form-dashboard">
+          <form name="blog">
+            <div class="main-title">
+              <h1>Welcome to the messages</h1>
+            </div>
+            <div class="visitor">
+                <h2>Total messages</h2>
+                <span class="blog-number"></span>
+            </div>
+            <!-- <input type="text" id="ftitle" placeholder="Add title"> -->
+            <h3>messages</h3>
+            <br>
+            <!-- <div class="message-division">
+              <div class="dash-message">
+                  <div class="user">
+                      <h4 class="user-message">Kanova</h4>
+                  <h6 class="user-email">kanova@gmail.com</h6>
+                  </div>
+                  <p class="posted-image">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+              </div>
+            </div>
+            <div class="message-division">
+              <div class="dash-message">
+                  <div class="user">
+                      <h4 class="user-message">Kanova</h4>
+                  <h6 class="user-email">kanova@gmail.com</h6>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+              </div>
+            </div>
+            <div class="message-division">
+              <div class="dash-message">
+                  <div class="user">
+                      <h4 class="user-message">Kanova</h4>
+                  <h6 class="user-email">kanova@gmail.com</h6>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+              </div>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script>
+</html>

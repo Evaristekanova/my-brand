@@ -13,12 +13,16 @@
 }
 /* ----humberger------ */
 .humberger{
-    position: absolute;
-    top: 20px;
-    right: 40px;
+    position: sticky;
+    height: 50px;
+    width: 100%;
+    top: 0px;
+    left: 20px;
     color: var(--green);
     font-size: 40px;
-    visibility: hidden;
+    display: none;
+    z-index: 100;
+    background-color: var(--gray-color);
 }
 body{
     color: var(--white);
@@ -28,8 +32,8 @@ body{
     background-color: var(--dark-blue);
 }
 header{
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
 }
@@ -102,6 +106,9 @@ input{
     color: var(--white);
     transition: .3s all ease-in-out;
 }
+.dlt-btn{
+    background: rgb(117, 6, 6);
+}
 .btn-cv{
     text-decoration: none;
     display: flex;
@@ -113,11 +120,24 @@ input{
 .btn:hover{
     background-color: var(--dark-green);
 }
+.dlt-btn:hover{
+    background: rgb(131, 34, 34);
+}
 .btn i{
     color: var(--white);
 }
 /* -------------navigation--------------- */
+/* .nav-holder{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    z-index: 200;
+    margin-bottom: 100px;
+} */
 .nav-container{
+    /* position:sticky; */
     float: right;
     display: flex;
     align-items: center;
@@ -127,8 +147,22 @@ input{
     background-color: var(--gray-color);
     border-radius: 0px 0px 0px 20px;
     margin-bottom: 10px;
-    z-index: 10;
+    box-shadow: 3px 5px 5px --gray-color;
 }
+.sticky {
+    position: fixed;
+    background-color: var(--gray-color);
+    float: right;
+    display: flex;
+    align-items: center;
+    width: 75%;
+    right: 20px;
+    height: 55px;
+    box-shadow: 3px 5px 5px rgb(8, 8, 8);
+    border-radius: 0 0 0 20px;
+    z-index: 100;
+    transition: all .4s ease-in-out;
+  }
 .navbar{
     padding: 5px 20px;
     width: 100%;
@@ -152,12 +186,16 @@ input{
     list-style: none;
     background-color: var(--dark-green);
 }
+.active-normal-link{
+    background-color: var(--dark-green);
+}
 /* ---------home section----------------- */
 .head-container{
-    /* margin-top: -10px; */
+    position: relative;
     width: 100%;
     padding: 20px 70px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
@@ -436,6 +474,9 @@ h5{
     transform: translateX(10px);
 }
 /* ======================================== blog section ============================ */
+.navbar-blog{
+    margin-bottom: 100px;
+}
 .subscription{
     display: flex;
     align-items: center;
@@ -443,6 +484,16 @@ h5{
     padding: 10px;
     width: 30vw;
     margin-bottom: 30px;
+}
+.read-whole-blog{
+    color: var(--green);
+}
+.blog-link{
+    text-decoration: none;
+    color: var(--green);
+}
+.blog-link:hover{
+    text-decoration: underline;
 }
 .subscription input{
     font-size: 16px;
@@ -496,14 +547,38 @@ h5{
     background-color: var(--gray-color);
     border-radius: 8px;
 }
-.search input:focus{
-    border: none;
-}
 .search i{
+    z-index: 20;
     font-size: 22px;
     color: var(--green);
 }
 /* -------------blog section------------------ */
+.single-blog-page-container{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blog-list-container{
+    width: 35%;
+    margin-top: 40px;
+}
+.sinlge-blog-and-message{
+    margin-top: 40px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.blogs-block-single{
+    width: 100%;
+    /* max-height: 200vh; */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around; */
+}
 .blogs-block{
     margin-top: 40px;
     width: 100%;
@@ -512,11 +587,64 @@ h5{
     justify-content: space-around;
     /* align-items: center; */
 }
+/* ==================================================single blog page============================== */
+.back-to-home-btn{
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    height: 40px;
+    width: 80px;
+    /* background-color: var(--dark-green); */
+    text-align: center;
+}
+.back-to-home-btn::before{
+    content: '';
+    position: absolute;
+    top:2%;
+    left: -2px;
+    border: 2px white;
+    height: 20px;
+    width: 20px;
+    background-color:var(--dark-green);
+    text-align: center;
+    transform:rotateZ(45deg);
+    
+    z-index: -1;
+}
+.back-btn{
+    padding: 3px 11px;
+    margin-left: 5px;
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--dark-green);
+    transition: .3s all ease-in-out;
+}
+.blog-single{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
+.blog-single-list{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
 .blog{
     width: 28%;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
+.blog img{
+    border-radius: 15px;
 }
 /* blog image */
 .blog-image{
@@ -526,16 +654,79 @@ h5{
     width: 100%;
     border-radius: 10px 10px 0 0;
     margin: 0 auto;
+    border-radius: 15px;
+}
+.article-list{
+    background-color: var(--gray-color);
+    /* max-height: 37vh; */
+    padding: 10px 15px;
 }
 .article{
     /* border: 2px solid red; */
     padding: 10px 5px;
 }
+.aBlog-listed{
+    text-align: center;
+    text-decoration: none;
+}
+.aBlog-listed{
+    text-align: center;
+    text-decoration: underline;
+}
+/*------add comment on a blog----------*/
+.blog-comment{
+    width: 100%;
+    padding: 10px;
+}
+.blog-comment > input{
+    display: block;
+    padding: 10px;
+    color: var(--white);
+    border-radius: 10px;
+    width: 70%;
+    outline: none;
+    border: 1px solid #27AE60;
+    margin-bottom: 20px;
+    background-color: #2A2E35;
+}
+.add-comment-title{
+    padding-bottom: 10px;
+    font-weight: 300;
+    color: var(--green);
+}
+#write-comment{
+    width: 70%;
+    outline: none;
+    background-color: var(--gray-color);
+    color: var(--white);
+    border: 1px solid #367E54;
+    height: 8vh;
+    padding: 10px;
+}
+#post-btn{
+    width: 60%;
+    margin-bottom: 15px;
+}
+/* ----------------------------------------- */
 .blog-title{
     font-size: 20px;
     margin-bottom: 15px;
     text-align: center;
     color: var(--green);
+}
+.blog-name{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 85%;
+    margin: auto;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.blog-title-dashboard{
+    color: var(--white);
 }
 /* blog button division */
 .blog-button-div{
@@ -579,6 +770,17 @@ h5{
 	/* justify-content: space-between; */
 	gap: 1.2rem;
 }
+.alert{
+    padding: 10px 15px;
+    text-align: center;
+    background-color: var(--dark-green);
+    font-weight: 400;
+    border-radius: 10px;
+    display: none;
+}
+.login-form{
+    padding-top: 10px;
+}
 .form-to-fill{
 	display: flex;
 	justify-content: space-between;
@@ -600,11 +802,16 @@ h5{
 .form-to-fill textarea::placeholder{
 	font-size: 120%;
 }
+.contact-form p{
+    color: red;
+    font-size: 16px;
+}
 #textarea{
+    outline: none;
 	height: 7rem;
 }
 /* send button */
-.btn-send{
+.contact-btn{
 	background-color: var(--green);
 	cursor:pointer;
 	width: 30%;
@@ -614,22 +821,27 @@ h5{
 	border: none;
 }
 /* ======================================login page==========================*/
+.login-header{
+    width: 100%;
+    height: 100vh;
+}
 .login-contanier{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* align-items: center; */
-    max-width: 300px;
+    align-items: center;
+    max-width: 350px;
     margin: 0 auto;
-    margin-top: 90px;
+    margin-top: 70px;
+    box-shadow: 5px 5px 8px rgb(8, 8, 8);
     background-color:var(--gray-color);
 }
 .profile-icon{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -640,21 +852,26 @@ h5{
     font-size: 40px;
     color: var(--dark-blue);
 }
+label,
+.forgot-password{
+    font-size: 16px;
+}
 .login-input,
 .reset-password{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-bottom: 25px;
-    /* border: #27AE60 solid 1px; */
 }
 .login-input input{
+    display: block;
     line-height: 2.5;
     padding: 5px 10px;
     background-color: var(--dark-blue);
     border: none;
+    color: var(--white);
 }
 .reset-password{
     color: var(--white);
@@ -672,30 +889,52 @@ h5{
     background-color: var(--green);
     border: none;
 }
+.signup-btn{
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--green);
+    border: none;
+}
 /* =========================================dashboard page========================= */
 .dashboard-container{
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }
-/* -----------------dashboard navigation---------------- */
-.dashboard-navbar{
-    width: 20%;
+.dash-section{
+    width: 100%;
     height: 100%;
-    padding: 20px;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:var(--green);
 }
+.message-holder{
+    width: 100%;
+}
+.dash-message{
+    width: 98%;
+    margin: auto;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom:20px;
+    background-color: var(--dark-blue);
+}
+/* -----------------dashboard navigation---------------- */
 .dashboard-logo{
+    height: 70px;
+    width: 70px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
     background-color: var(--gray-color);
     color: var(--green);
     margin-bottom: 30px;
+    border-radius: 50%;
 }
 .dashboard-logo i{
+    font-size: 40px;
     color: var(--green);
 }
 .side-navbar nav{
@@ -705,38 +944,81 @@ h5{
     padding: 10px 15px;
     gap: 35px;
 }
-/* .side-navbar-inner{
-    display: flex;
-    justify-content: flex-start;
-    width: 160px;
-    padding: 10px;
-    border: red solid 2px;
-} */
-.side-navbar-inner li{
-    list-style-type: none;
-    text-align: center;
+.side-navbar nav li{
+    list-style: none;
+    margin-bottom: 15px;
 }
-.side-navbar-inner li a{
-    padding: 10px;
+.side-navbar a{
+    padding: 15px 10px;
     text-decoration: none;
     font-size: 20x;
     color: var(--white);
+    /* background-color: var(--gray-color); */
     transition: all .3s ease-in-out;
 }
-.side-navbar-inner li a:hover{
+.side-navbar li a:hover{
     background-color: var(--gray-color);
 }
 .active-dash-link{
     background-color: var(--gray-color);
 }
 /* -------------------dashboard information------------------- */
+.dashboard-blog-container{
+    width: 80%;
+    padding: 30px 40px;
+}
+.dash-title{
+    margin: 20px 0 20px 0;
+    text-align: center;
+}
+.dashboard-short-description{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.dashboard-short-description div{
+    width: 200px;
+    height: 10vh;
+    background-color: var(--gray-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.message-division{
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.visitor{
+    text-align: center;
+    width: 250px;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+.user{
+    margin-bottom: 10px;
+}
+.user h4{
+    color: var(--green);
+}
+.user h6{
+    font-weight: 300;
+}
+/* #dash{
+    overflow: visible;
+}
 .bashboard-information{
     width: 80%;
-    height: 100%;
+    /* height: 100%; *
     padding: 10px 60px;
     display: flex;
     flex-direction: column;
-    /* gap: 20px; */
+    /* gap: 20px;
 }
 .dash-title{
     margin: 10px;
@@ -753,9 +1035,10 @@ h5{
 }
 .division-line{
     height: 3px;
-    width: 87%;
+    width: 85%;
     background-color: var(--white);
     margin-bottom: 25px;
+
 }
 .dash-blog{
     display: flex;
@@ -764,14 +1047,15 @@ h5{
     align-items: center;
     position: relative;
     width: 85%;
-    height: 15vh;
+    /* margin: auto; *
+    height: 20vh;
     background-color: var(--gray-color);
     margin-bottom: 30px;
 
 }
 .inner-dash{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     gap: 60px;
 }
@@ -798,7 +1082,7 @@ h5{
 .dash-btn{
     max-width: 220px;
     padding: 10px 10px;
-}
+} */
 /* ==========================================footer========================= */
 .footer-line{
     height: 3px;
@@ -844,8 +1128,14 @@ h5{
     color: var(--green);
     font-size: 25px;
 }
-.footer-icons a{
+.f-link{
+    color: var(--white);
     text-decoration: none;
+}
+.f-link:hover{
+    color: var(--green);
+}
+.footer-icons a{
     color: var(--green);
 }
 .footer-icons i{
@@ -856,21 +1146,22 @@ h5{
 }
 /* =================humberger menu=================== */
 .humberger-container{
-    bottom: 20px;
+    /* position: absolute; */
     position: fixed;
-    right: 3%;
+    top: 0px;
+    left: -100%;
     padding: 10px;
     display: grid;
     justify-items: center;
     align-items: center;
     width: 280px;
     background-color: var(--gray-color);
-    transition: .4s all ease-in-out;
-    visibility: hidden;
-    z-index: 100;
+    transition: .5s all ease-in-out;
+    /* visibility: hidden; */
+    z-index: 200;
 }
 .active{
-    left: 55.5%
+    left: 0px;
 }
 .reponsive-nav{
     display: flex;
@@ -881,6 +1172,8 @@ h5{
     list-style: none;
 }
 .reponsive-nav li a{
+    color: var(--white);
+    text-decoration: none;
     list-style: none;
     display: block;
     padding: 5px 10px;
@@ -893,18 +1186,27 @@ h5{
     position: relative;
     display: grid;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
     font-size: 35px;
     height: 40px;
     text-align: right;
 }
 .close-div div{
-    position: absolute;
-    top: -8px;
-    right: 30px;
-    /* bottom: -10px; */
-    /* padding: 10px; */
     width: 60px;
     height: 100%;
 }
+/* ========================================add blog page====================== */
+.file-div{
+    width: 85%;
+    height: 15%;
+    background-color: var(--gray-color);
+    margin-bottom: 30px;
+    vertical-align: middle;
+}
+#editor, .ql-toolbar{
+    width: 95%;
+}
+/* .ql-toolbar{
+    width: 85%
+} */

@@ -1,35 +1,74 @@
 'use strict'
 ////////////////////selection//////////////
-
+const fullHeader = document.querySelector('#home')
 const nav = document.querySelector('.navbar')
 const slider = document.querySelector('.slider')
 const slides = document.querySelectorAll('.slide-component')
 const rightBtn = document.querySelector('.arrow-left')
 const leftBtn = document.querySelector('.arrow-right')
 const link = document.querySelector('.nav-link')
-const footLink = document.querySelector('.flink')
-const humberger = document.querySelector('.humberger')
-const close = document.querySelector('.close')
+const footLink = document.querySelector('.footer-nav')
+const closeHumberger = document.querySelector('.close')
 const humbergerContainer = document.querySelector('.humberger-container')
+const resNav = document.querySelector('.reponsive-nav')
+const navContainer = document.querySelector('.nav-container')
+const humberger = document.querySelector('.humberger-icon')
+const normalLink = document.querySelectorAll('.nav-link')
+// -----------contact form variable decralation-------////
+const emailContact = document.getElementById('contact-email')
+const firstName = document.getElementById('contact-fname')
+const secondName = document.getElementById('contact-sname')
+const textarea = document.getElementById('textarea')
+const contactForm = document.querySelector('.contact-form')
+const errorFname = document.querySelector('.error-fname')
+const errorSname = document.querySelector('.error-sname')
+const emailError = document.querySelector('.error-email')
+const textareaError = document.querySelector('.error-textarea')
+// ==========================implementation humberger functionality==================//
+const humbergerIcon = humberger.addEventListener('click', function(){
+	humbergerContainer.style.visibility = 'visible'
+	humbergerContainer.classList.add('active')
+	humberger.style.visibility = 'hidden'
+})
+const humbergerCloseIcon = closeHumberger.addEventListener('click', function(){
+	humbergerContainer.style.visibility = 'hidden'
+	humbergerContainer.classList.remove('active')
+	humberger.style.visibility = 'visible'
+})
+const alertMsg = document.querySelector('.alert')
 // ================implementing scroll to clicked section section==============//
 // ----------------navigation----------------//
+navContainer.addEventListener('click', function(e){
+	if(e.target.classList.contains('nav-link')){
+		e.preventDefault()
+		normalLink.forEach(el=>el.classList.remove('active-normal-link'))
+		e.target.classList.add('active-normal-link')
+	}
+})
 nav.addEventListener('click', function(e){
-	e.preventDefault()
+	// e.preventDefault()
 	const link = e.target
-	console.log(link)
 	if(link.classList.contains('nav-link')){
-	const linkId = link.getAttribute('href')
+		const linkId = link.getAttribute('href')
 	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
 	}
+})
+resNav.addEventListener('click', function(e){
+	const link = e.target
+	if(link.classList.contains('nav-link')){
+		e.preventDefault()
+	const linkId = link.getAttribute('href')
+	document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
+}
 })
 // -----------footer link--------------------//
 footLink.addEventListener('click', function(e){
 	e.preventDefault()
-	if(e.target.classList.contains('nav-link')){
-		const link = e.target
-		const linkId = link.getAttribute('href')
-		document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
-	}
+		if(e.target.classList.contains('f-link')){
+			const link = e.target
+			const linkId = link.getAttribute('href')
+			document.querySelector(linkId).scrollIntoView({behavior: 'smooth'})
+		}
 })
 // ================implementing slide section==============//
 ///////////////////////
@@ -57,16 +96,54 @@ leftBtn.addEventListener('click', function(e){
 	}
 	toSlide(curSlide)
 })
-// ==========================implementing humberger functionality==================//
-humberger.addEventListener('click', function(){
-	console.log(humbergerContainer)
-	humbergerContainer.classList.add('active')
-	console.log("clicked")
-	humberger.style.visibility = 'hidden'
-})
-close.addEventListener('click', function(){
-	console.log(humbergerContainer)
-	humbergerContainer.classList.remove('active')
-	console.log("clicked")
-	humberger.style.visibility = 'visible'
+// =======================IMPLEMENTING STICKY NAVIGATION==========================//
+const stickyNav = function (entries) {
+	entries.forEach((entry) => {
+	  if (!entry.isIntersecting) navContainer.classList.add('sticky');
+	  else navContainer.classList.remove('sticky');
+	});
+  };
+//   const navHeight = nav.getBoundingClientRect().height;
+//   console.log(navHeight)
+  const intersectionAPI = new IntersectionObserver(stickyNav, {
+	root: null,
+	threshold: 0,
+	rootMargin: `-90px`,
+  });
+  intersectionAPI.observe(fullHeader);
+
+  //   ==========================contact form validation ========================//
+  const messagesStore = JSON.parse(localStorage.getItem('contactMessages', ) || '[]')
+contactForm.addEventListener('submit', function(e){
+	e.preventDefault()
+	const message = []
+	const messageText = []
+	if((firstName.value == '' || firstName.value.trim() == '') || (secondName.value == '' || secondName.value.trim() == '')){
+		message.push("Names are required")
+		errorFname.innerHTML = message.join(',')
+	}
+	if(textarea.value.trim() == ''|| textarea.value == ''){
+		messageText.push('please write message')
+		textareaError.innerHTML = messageText.join(' ')
+	}
+	else{
+		const messageBox = {
+			fname: firstName.value,
+			sname: secondName.value,
+			email: emailContact.value,
+			message:textarea.value
+		}
+		console.log(messagesStore);
+		messagesStore.push(messageBox);
+		localStorage.setItem('contactMessages', JSON.stringify(messagesStore))
+		console.log(messageBox);
+		textarea.value = firstName.value = secondName. value = emailContact.value = ''
+		errorFname.innerHTML = ''
+		emailError.innerHTML= ''
+		textareaError.innerHTML = ''
+		alertMsg.style.display = 'block'
+		setTimeout(()=>{
+		alertMsg.style.display = 'none'
+		}, 3000)
+	}
 })
