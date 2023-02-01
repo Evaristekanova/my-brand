@@ -4,38 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/tablet.css">
     <link rel="stylesheet" href="./css/phone.css">
-    <script src="https://kit.fontawesome.com/1cb130eb6d.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Eva My Brand</title>
     <script defer src="./js/script.js"></script>
+    <!-- <script defer src="./js/fetchBlog.js"></script> -->
 </head>
 <body>
     <div class="humberger"><span class="humberger-icon"><i class="fa-solid fa-bars"></i></span></i></div>
     <header id="home">
-        <div class="header-container">
-            <div class="nav-container">
-                <nav class="navbar">
+        <!-- <div class="header-container"> -->
+            <div class="nav-holder">
+                <div class="nav-container">
+                    <nav class="navbar">
+                        <li><a class="nav-link active-normal-link" href="#home">Home</a></li>
+                        <li><a class="nav-link" href="#skills">About Me</a></li>
+                        <li><a class="nav-link" href="#mywork">My work</a></li>
+                        <li><a class="nav-link" href="#blogs">Blogs</a></li>
+                        <li><a class="nav-link" href="#contact">Contact</a></li>
+                        <li><a href="./html/login.html">Login</a></li>
+                    </nav>
+                </div>
+            </div>
+            <div class="humberger-container">
+                <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
+                <nav class="reponsive-nav">
                     <li><a class="nav-link" href="#home">Home</a></li>
                     <li><a class="nav-link" href="#skills">About Me</a></li>
                     <li><a class="nav-link" href="#mywork">My work</a></li>
                     <li><a class="nav-link" href="#blogs">Blogs</a></li>
                     <li><a class="nav-link" href="#contact">Contact</a></li>
-                    <li><a class="nav-link" href="./html/login.html">Login</a></li>  
-              </nav>
+                    <li><a href="./html/login.html">Login</a></li>
+                </nav>
             </div>
-            <div class="humberger-container">
-            <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
-            <nav class="reponsive-nav">
-                <li><a class="nav-link" href="#home">Home</a></li>
-                <li><a class="nav-link" href="#skills">About Me</a></li>
-                <li><a class="nav-link" href="#mywork">My work</a></li>
-                <li><a class="nav-link" href="#blogs">Blogs</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-                <li><a class="nav-link" href="./html/login.html">Login</a></li>  
-            </nav>
-        </div>
+        <!-- </div> -->
             <!-- triangle symbol -->
             <div class="triangle"></div>
             <!-- home section -->
@@ -50,19 +54,19 @@
                         solutions to everyday problems&quot;
                     </p> -->
                     <p>
-                        i am able to work well on both in a team environmet as well as using own initiative
+                        i am able to work well on both in a team environment as well as using own initiative
                         and also work well under pressure and adhere to strict deadlines.
                     </p>
                     <a class="btn btn-cv" href="#">
                         <span class="btn-text">Download Cv </span>
                         <span class="btn-icon"> <i class="fa-solid fa-download"></i></span>
                     </a>
-                    
+
                 </div>
         </div>
    </header>
     <!-- -----------------------skills section------------------->
-    
+
     <section class="section" id="skills">
        <h2 class="section-title">About <span>Me</span></h2>
        <div class="skills-container">
@@ -128,7 +132,7 @@
                         <div class="date">
                             <h3>2022-present</h3>
                         </div>
-                        <h4 class="timeline-title">Andela trainee</h4>
+                        <h4 class="timeline-title">University of Rwanda</h4>
                         <p>
                             computer science student with growth mindset working
                             contributed on different students projects during studies
@@ -167,7 +171,7 @@
             <div class="explain-work">
                 <h4 class="work-title">Pig <span>game</span></h4>
                 <p>
-                    this pig game it is all about dice game 
+                    this pig game it is all about dice game
                     where two players can roll dice to see who  will win the game first
                 </p>
                 <div class="mywork-btn-div">
@@ -184,8 +188,8 @@
             <div class="explain-work">
                 <h4 class="work-title">Guess  a <span>number</span></h4>
                 <p>
-                    This is a lucky game where you guess number between given range 
-                    you won when you guess correct and loose when marks become zero 
+                    This is a lucky game where you guess number between given range
+                    you won when you guess correct and loose when marks become zero
                 </p>
                 <div class="mywork-btn-div">
                     <a href="#">github <i class="fa-brands fa-github"></i></a>
@@ -200,7 +204,7 @@
             <div class="explain-work">
                 <h4 class="work-title">simple <span>challenges</span></h4>
                 <p>
-                    This is all about the frontend mentor challenge i've tried to 
+                    This is all about the frontend mentor challenge i've tried to
                     implement to text the level of my skills
                 </p>
                 <div class="mywork-btn-div">
@@ -213,22 +217,15 @@
    </section>
    <section class="section" id="blogs">
     <h2 class="section-title">Here are <span>blogs</span></h2>
-    <!-- <div class="subscription">
-        <input type="email" placeholder="Enter your email" required>
-        <button class="sub-btn">subscribe</button>
-    </div> 
-    <div class="search">
-        <input type="text">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </div>-->
     <div class="blogs-block">
-        <div class="blog">
+        <!-- <div class="blog" id="text">
             <img src="./img/work1.jpg" alt="" srcset="">
             <div class="article">
                 <h3 class="blog-title">How to create your own website</h3>
                 <p>
-                    Register your domain name. Your domain name should reflect your products or 
-                    services so that your customers can easily find your business through a search.
+                    Register your domain name. Your domain name should reflect your products or
+                    services so that your customers
+                    <span><a class="read-whole-blog" href="#">read more</a></span>
                 </p>
             </div>
         </div>
@@ -237,10 +234,9 @@
             <div class="article">
                 <h3 class="blog-title">How to become a web designer</h3>
                 <p>
-                    Web Designer career guide is intended to help you take 
-                    the first steps toward a lucrative career in Web Design. The guide provides an 
-                    in-depth overview of the web design skills 
-                    you should learn and the best training options.
+                    Web Designer career guide is intended to help you take
+                    the first steps toward a lucrative career in Web Design.
+                    <span><a class="read-whole-blog" href="#">read more</a></span>
                 </p>
             </div>
         </div>
@@ -250,13 +246,12 @@
             <div class="article">
                 <h3 class="blog-title">Javascript the Most boring Part</h3>
                 <p>
-                    I always hear people complain that JavaScript is hard to learn, 
-                    or that it's just not clicking for them.
-                     This frustrates me. It frustrates me because I want to help them 
-                     learn, help it click for them.
+                    I always hear people complain that JavaScript is hard to learn,
+                    or that it's just not clicking for them.when
+                    <span><a class="read-whole-blog" href="#">read more</a></span>
                 </p>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="blog-button-div">
         <a class="btn btn-cv" href="./html/blog.html">
@@ -285,19 +280,25 @@
 					<p>+250780177117</p>
 				</div>
 			</div>
-            <div class="login">
-				<div class="form-to-fill">
-					<input type="text" placeholder="Fist name">
-					<input class="sinput" type="text" placeholder="Last name">
-				</div>
-				<div class="form-to-fill">
-					<input type="email" placeholder="example@gmal.com">
-				</div>
-				<div class="form-to-fill">
-					<textarea name="" id="textarea" placeholder="your message here please"></textarea>
-				</div>
-				<button class="btn btn-send">submit</button>
-			</div>
+            <form action="" class="contact-form">
+                <div class="login">
+                    <div class="alert">submitted successfully</div>
+                    <div class="form-to-fill">
+                        <input type="text" id="contact-fname" placeholder="Fist name" required>
+                        <input id="contact-sname" type="text" placeholder="Last name" required>
+                    </div>
+                    <p class="error-fname"></p>
+                    <div class="form-to-fill">
+                        <input type="email" id="contact-email" placeholder="example@gmal.com" required>
+                    </div>
+                    <p class="error-email"></p>
+                    <div class="form-to-fill">
+                        <textarea name="" id="textarea" placeholder="your message here please"></textarea>
+                    </div>
+                    <p class="error-textarea"></p>
+                    <button class="btn contact-btn">submit</button>
+                </div>
+            </form>
      </div>
    </section>
    <footer class="footer">
@@ -309,16 +310,16 @@
                 <h3>Fullstack Engineer</h3>
             </div>
             <div class="footer-link">
-                <nav>
+                <nav class="footer-nav">
                     <div class="flink">
-                        <li><a class="nav-link" href="#home">Home</a></li>
-                        <li><a class="nav-link space" href="#skills">About Me</a></li>
-                        <li><a class="nav-link space" href="#mywork">My work</a></li>
+                        <li><a class="f-link" href="#home">Home</a></li>
+                        <li><a class="f-link space" href="#skills">About Me</a></li>
+                        <li><a class="f-link space" href="#mywork">My work</a></li>
                     </div>
                     <div class="flink flink-one">
-                    <li><a class="nav-link" href="#blogs">Blogs</a></li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
-                    <li><a class="nav-link" href="./html/login.html">Login</a></li>
+                        <li><a class="f-link" href="#blogs">Blogs</a></li>
+                        <li><a class="f-link" href="#contact">Contact</a></li>
+                        <li><a class="f-link" href="./html/login.html">Login</a></li>
                     </div>
                 </nav>
             </div>
@@ -337,5 +338,11 @@
         </div>
     </div>
    </footer>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="./js/fireFetchBlogs.js"></script>
 </body>
 </html>

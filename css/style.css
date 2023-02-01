@@ -32,8 +32,8 @@ body{
     background-color: var(--dark-blue);
 }
 header{
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
 }
@@ -106,6 +106,9 @@ input{
     color: var(--white);
     transition: .3s all ease-in-out;
 }
+.dlt-btn{
+    background: rgb(117, 6, 6);
+}
 .btn-cv{
     text-decoration: none;
     display: flex;
@@ -117,11 +120,24 @@ input{
 .btn:hover{
     background-color: var(--dark-green);
 }
+.dlt-btn:hover{
+    background: rgb(131, 34, 34);
+}
 .btn i{
     color: var(--white);
 }
 /* -------------navigation--------------- */
+/* .nav-holder{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    z-index: 200;
+    margin-bottom: 100px;
+} */
 .nav-container{
+    /* position:sticky; */
     float: right;
     display: flex;
     align-items: center;
@@ -131,8 +147,22 @@ input{
     background-color: var(--gray-color);
     border-radius: 0px 0px 0px 20px;
     margin-bottom: 10px;
-    z-index: 10;
+    box-shadow: 3px 5px 5px --gray-color;
 }
+.sticky {
+    position: fixed;
+    background-color: var(--gray-color);
+    float: right;
+    display: flex;
+    align-items: center;
+    width: 75%;
+    right: 20px;
+    height: 55px;
+    box-shadow: 3px 5px 5px rgb(8, 8, 8);
+    border-radius: 0 0 0 20px;
+    z-index: 100;
+    transition: all .4s ease-in-out;
+  }
 .navbar{
     padding: 5px 20px;
     width: 100%;
@@ -156,12 +186,16 @@ input{
     list-style: none;
     background-color: var(--dark-green);
 }
+.active-normal-link{
+    background-color: var(--dark-green);
+}
 /* ---------home section----------------- */
 .head-container{
-    /* margin-top: -10px; */
+    position: relative;
     width: 100%;
     padding: 20px 70px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
@@ -451,6 +485,16 @@ h5{
     width: 30vw;
     margin-bottom: 30px;
 }
+.read-whole-blog{
+    color: var(--green);
+}
+.blog-link{
+    text-decoration: none;
+    color: var(--green);
+}
+.blog-link:hover{
+    text-decoration: underline;
+}
 .subscription input{
     font-size: 16px;
     color: var(--white);
@@ -509,6 +553,32 @@ h5{
     color: var(--green);
 }
 /* -------------blog section------------------ */
+.single-blog-page-container{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blog-list-container{
+    width: 35%;
+    margin-top: 40px;
+}
+.sinlge-blog-and-message{
+    margin-top: 40px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.blogs-block-single{
+    width: 100%;
+    /* max-height: 200vh; */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around; */
+}
 .blogs-block{
     margin-top: 40px;
     width: 100%;
@@ -517,11 +587,64 @@ h5{
     justify-content: space-around;
     /* align-items: center; */
 }
+/* ==================================================single blog page============================== */
+.back-to-home-btn{
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    height: 40px;
+    width: 80px;
+    /* background-color: var(--dark-green); */
+    text-align: center;
+}
+.back-to-home-btn::before{
+    content: '';
+    position: absolute;
+    top:2%;
+    left: -2px;
+    border: 2px white;
+    height: 20px;
+    width: 20px;
+    background-color:var(--dark-green);
+    text-align: center;
+    transform:rotateZ(45deg);
+    
+    z-index: -1;
+}
+.back-btn{
+    padding: 3px 11px;
+    margin-left: 5px;
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--dark-green);
+    transition: .3s all ease-in-out;
+}
+.blog-single{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
+.blog-single-list{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
 .blog{
     width: 28%;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    background-color: var(--gray-color);
+    border-radius: 15px;
+}
+.blog img{
+    border-radius: 15px;
 }
 /* blog image */
 .blog-image{
@@ -531,16 +654,79 @@ h5{
     width: 100%;
     border-radius: 10px 10px 0 0;
     margin: 0 auto;
+    border-radius: 15px;
+}
+.article-list{
+    background-color: var(--gray-color);
+    /* max-height: 37vh; */
+    padding: 10px 15px;
 }
 .article{
     /* border: 2px solid red; */
     padding: 10px 5px;
 }
+.aBlog-listed{
+    text-align: center;
+    text-decoration: none;
+}
+.aBlog-listed{
+    text-align: center;
+    text-decoration: underline;
+}
+/*------add comment on a blog----------*/
+.blog-comment{
+    width: 100%;
+    padding: 10px;
+}
+.blog-comment > input{
+    display: block;
+    padding: 10px;
+    color: var(--white);
+    border-radius: 10px;
+    width: 70%;
+    outline: none;
+    border: 1px solid #27AE60;
+    margin-bottom: 20px;
+    background-color: #2A2E35;
+}
+.add-comment-title{
+    padding-bottom: 10px;
+    font-weight: 300;
+    color: var(--green);
+}
+#write-comment{
+    width: 70%;
+    outline: none;
+    background-color: var(--gray-color);
+    color: var(--white);
+    border: 1px solid #367E54;
+    height: 8vh;
+    padding: 10px;
+}
+#post-btn{
+    width: 60%;
+    margin-bottom: 15px;
+}
+/* ----------------------------------------- */
 .blog-title{
     font-size: 20px;
     margin-bottom: 15px;
     text-align: center;
     color: var(--green);
+}
+.blog-name{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 85%;
+    margin: auto;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.blog-title-dashboard{
+    color: var(--white);
 }
 /* blog button division */
 .blog-button-div{
@@ -584,6 +770,17 @@ h5{
 	/* justify-content: space-between; */
 	gap: 1.2rem;
 }
+.alert{
+    padding: 10px 15px;
+    text-align: center;
+    background-color: var(--dark-green);
+    font-weight: 400;
+    border-radius: 10px;
+    display: none;
+}
+.login-form{
+    padding-top: 10px;
+}
 .form-to-fill{
 	display: flex;
 	justify-content: space-between;
@@ -605,11 +802,16 @@ h5{
 .form-to-fill textarea::placeholder{
 	font-size: 120%;
 }
+.contact-form p{
+    color: red;
+    font-size: 16px;
+}
 #textarea{
+    outline: none;
 	height: 7rem;
 }
 /* send button */
-.btn-send{
+.contact-btn{
 	background-color: var(--green);
 	cursor:pointer;
 	width: 30%;
@@ -628,17 +830,18 @@ h5{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    max-width: 300px;
+    max-width: 350px;
     margin: 0 auto;
-    margin-top: 90px;
+    margin-top: 70px;
+    box-shadow: 5px 5px 8px rgb(8, 8, 8);
     background-color:var(--gray-color);
 }
 .profile-icon{
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -649,21 +852,26 @@ h5{
     font-size: 40px;
     color: var(--dark-blue);
 }
+label,
+.forgot-password{
+    font-size: 16px;
+}
 .login-input,
 .reset-password{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-bottom: 25px;
-    /* border: #27AE60 solid 1px; */
 }
 .login-input input{
+    display: block;
     line-height: 2.5;
     padding: 5px 10px;
     background-color: var(--dark-blue);
     border: none;
+    color: var(--white);
 }
 .reset-password{
     color: var(--white);
@@ -681,8 +889,18 @@ h5{
     background-color: var(--green);
     border: none;
 }
+.signup-btn{
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--white);
+    background-color: var(--green);
+    border: none;
+}
 /* =========================================dashboard page========================= */
 .dashboard-container{
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -692,18 +910,18 @@ h5{
     width: 100%;
     height: 100%;
 }
-/* -----------------dashboard navigation---------------- */
-.dashboard-navbar{
-    padding-top: 100px;
-    width: 20%;
-    height: 100%;
-    padding: 20px;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:var(--green);
+.message-holder{
+    width: 100%;
 }
+.dash-message{
+    width: 98%;
+    margin: auto;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom:20px;
+    background-color: var(--dark-blue);
+}
+/* -----------------dashboard navigation---------------- */
 .dashboard-logo{
     height: 70px;
     width: 70px;
@@ -745,16 +963,62 @@ h5{
     background-color: var(--gray-color);
 }
 /* -------------------dashboard information------------------- */
-#dash{
+.dashboard-blog-container{
+    width: 80%;
+    padding: 30px 40px;
+}
+.dash-title{
+    margin: 20px 0 20px 0;
+    text-align: center;
+}
+.dashboard-short-description{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.dashboard-short-description div{
+    width: 200px;
+    height: 10vh;
+    background-color: var(--gray-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.message-division{
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.visitor{
+    text-align: center;
+    width: 250px;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+.user{
+    margin-bottom: 10px;
+}
+.user h4{
+    color: var(--green);
+}
+.user h6{
+    font-weight: 300;
+}
+/* #dash{
     overflow: visible;
 }
 .bashboard-information{
     width: 80%;
-    /* height: 100%; */
+    /* height: 100%; *
     padding: 10px 60px;
     display: flex;
     flex-direction: column;
-    /* gap: 20px; */
+    /* gap: 20px;
 }
 .dash-title{
     margin: 10px;
@@ -783,7 +1047,7 @@ h5{
     align-items: center;
     position: relative;
     width: 85%;
-    /* margin: auto; */
+    /* margin: auto; *
     height: 20vh;
     background-color: var(--gray-color);
     margin-bottom: 30px;
@@ -818,7 +1082,7 @@ h5{
 .dash-btn{
     max-width: 220px;
     padding: 10px 10px;
-}
+} */
 /* ==========================================footer========================= */
 .footer-line{
     height: 3px;
@@ -864,8 +1128,14 @@ h5{
     color: var(--green);
     font-size: 25px;
 }
-.footer-icons a{
+.f-link{
+    color: var(--white);
     text-decoration: none;
+}
+.f-link:hover{
+    color: var(--green);
+}
+.footer-icons a{
     color: var(--green);
 }
 .footer-icons i{
@@ -876,7 +1146,8 @@ h5{
 }
 /* =================humberger menu=================== */
 .humberger-container{
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     top: 0px;
     left: -100%;
     padding: 10px;
@@ -901,6 +1172,8 @@ h5{
     list-style: none;
 }
 .reponsive-nav li a{
+    color: var(--white);
+    text-decoration: none;
     list-style: none;
     display: block;
     padding: 5px 10px;
@@ -932,7 +1205,7 @@ h5{
     vertical-align: middle;
 }
 #editor, .ql-toolbar{
-    width: 85%;
+    width: 95%;
 }
 /* .ql-toolbar{
     width: 85%
