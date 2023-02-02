@@ -1,7 +1,7 @@
 'use strict mode'
 let parameter=new URLSearchParams(window.location.search);
-const rr = parameter.get('id');
-console.log(rr);
+const id = parameter.get('id');
+console.log(id);
 const singleBlog = document.querySelector('.blog-single')
 const curImage = document.getElementById('current-blog')
 const curTitle = document.getElementById('current-title')

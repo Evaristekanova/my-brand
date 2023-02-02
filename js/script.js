@@ -116,6 +116,7 @@ const stickyNav = function (entries) {
   const messagesStore = JSON.parse(localStorage.getItem('contactMessages', ) || '[]')
 contactForm.addEventListener('submit', function(e){
 	e.preventDefault()
+	let resMessage
 	const message = []
 	const messageText = []
 	if((firstName.value == '' || firstName.value.trim() == '') || (secondName.value == '' || secondName.value.trim() == '')){
@@ -128,16 +129,22 @@ contactForm.addEventListener('submit', function(e){
 	}
 	else{
 		const messageBox = {
-			fname: firstName.value,
-			sname: secondName.value,
+			firstName: firstName.value,
+			secondName: secondName.value,
 			email: emailContact.value,
-			message:textarea.value
+			messages:textarea.value
 		}
-		console.log(messagesStore);
-		messagesStore.push(messageBox);
-		localStorage.setItem('contactMessages', JSON.stringify(messagesStore))
-		console.log(messageBox);
-		textarea.value = firstName.value = secondName. value = emailContact.value = ''
+		fetch('https://important-suit-tuna.cyclic.app/api/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(messageBox),
+    })
+      .then((res) => res.json())
+      .then((data) => resMessage = data.message)
+      .catch((err) => console.log(err));
+		textarea.value = firstName.value = secondName.value = emailContact.value =''
 		errorFname.innerHTML = ''
 		emailError.innerHTML= ''
 		textareaError.innerHTML = ''
