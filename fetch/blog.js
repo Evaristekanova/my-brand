@@ -9,6 +9,7 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
   .then((blog) => {
     const allBlogs = blog.data;
     latestBlog = allBlogs.slice(-3);
+    latestBlog.reverse()
     latestBlog.forEach((el) => {
       content += `
         <div class="blog">
