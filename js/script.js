@@ -1,4 +1,4 @@
-'use strict'
+ 'use strict'
 ////////////////////selection//////////////
 const fullHeader = document.querySelector('#home')
 const nav = document.querySelector('.navbar')

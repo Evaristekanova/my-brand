@@ -52,12 +52,11 @@ signUpForm.addEventListener('submit', function(e){
         error.innerHTML = message.join(' ')
     }
     else if(createPassword.value.length > 15){
-        message.push('password is long than enough')
+        message.push('password is longer than enough')
         error.innerHTML = message.join(' ')
     }
     else if((createPassword.value.length >= 8 && createPassword.value.length <= 15)&&
     (createPassword.value === ConfirmPassword.value)){
-        console.log('good progress')
         emailForSignUp.value = createPassword.value = ConfirmPassword.value = ''
         window.location.assign('./blog.html')
     }
