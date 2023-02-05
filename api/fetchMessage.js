@@ -1,30 +1,29 @@
+const token = JSON.parse(localStorage.getItem('token'))
 const messagesContainer = document.querySelector('.messages-whole-container');
 fetch(
   `https://important-suit-tuna.cyclic.app/api/v1/messages/all`,
-  { mode: 'cors' },
   {
-    method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: `bearer ${localStorage.getItem('token')}`,
+      "Authorization": `Bearer ${token}`,
     },
   }
 )
   .then((res) => res.json())
   .then((messages) => {
-    console.log(localStorage.getItem('token'));
+    console.log(token);
     console.log(messages);
     const allMessages = messages.data;
+    console.log(allMessages);
     allMessages.forEach((el) => {
       messagesContainer.innerHTML += `
         <div class="message-division">
               <div class="dash-message">
                 <div class="user">
-                  <h4 class="user-message">Kanova</h4>
-                  <h6 class="user-email">kanova@gmail.com</h6>
+                  <h4 class="user-message">${el.firstName} ${el.secondName}</h4>
+                  <h6 class="user-email">${el.email}</h6>
                 </div>
                 <p class="posted-image">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  ${el.messages}
                 </p>
               </div>
             </div>`;

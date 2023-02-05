@@ -3,7 +3,8 @@ const no = document.getElementById('no');
 const confirmBox = document.querySelector('.confirm-msg');
 const blogContainerDashoard = document.querySelector('.dashboard-blog-list');
 
-fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
+(async function blogs(){ 
+  await fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
   .then((res) => res.json())
   .then((blog) => {
     const allBlogs = blog.data;
@@ -26,3 +27,5 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
   .catch((err) => {
     console.log(err);
   });
+})()
+const deleteBtn = document.querySelectorAll('.dlt-btn');
