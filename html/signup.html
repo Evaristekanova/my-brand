@@ -13,28 +13,37 @@
 <body>
     <div class="humberger"><span class="humberger-icon"><i class="fa-solid fa-bars"></i></span></i></div>
     <header class="login-header">
-        <div class="nav-container">
+        <div class="nav-container nav-for-all">
             <nav class="navbar">
-                <li><a href="../index.html#home">Home</a></li>
-                <li><a href="../index.html#skills">About Me</a></li>
-                <li><a href="../index.html#mywork">My work</a></li>
-                <li><a href="../index.html#blogs">Blogs</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-          </nav>
+                <li><a class="nav-link" href="../index.html#home">Home</a></li>
+                <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
+                <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+                <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+                <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
+            </nav>
         </div>
         <div class="humberger-container">
-            <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
+            <div class="close-div">
+                <div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div>
+            </div>
             <nav class="reponsive-nav">
-                <li><a href="../index.html#home">Home</a></li>
-                <li><a href="../index.html#skills">About Me</a></li>
-                <li><a href="../index.html#mywork">My work</a></li>
-                <li><a href="../index.html#blogs">Blogs</a></li>
-                <li><a href="../index.html#contact">Contact</a></li> 
+                <li><a class="nav-link" href="../index.html#home">Home</a></li>
+                <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
+                <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+                <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+                <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
             </nav>
         </div>
         <div class="login-contanier">
             <form action="" class="signup-form">
-                <div class="login-form">
+                <div class="alert">submitted successfully</div>
+                <div class="login-form"><div class="login-input">
+                    <label for="name-signup">Name</label>
+                    <input type="text" id="name-signup" placeholder="Enter your name" required>
+                    <p class="error"></p>
+                </div>
                     <div class="login-input">
                      <label for="email-signup">Email</label>
                      <input type="email" id="email-signup" placeholder="Enter your email" required>

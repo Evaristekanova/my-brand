@@ -9,57 +9,58 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/phone.css">
-    <script defer src="../js/login.js"></script>
 </head>
 <body>
     <div class="humberger"><span class="humberger-icon"><i class="fa-solid fa-bars"></i></span></i></div>
     <header class="login-header">
-            <div class="nav-container nav-for-all">
-                <nav class="navbar">
-                    <li><a class="nav-link" href="../index.html#home">Home</a></li>
-                    <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
-                    <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
-                    <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
-                    <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                    <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
-              </nav>
-            </div>
-            <div class="humberger-container">
-                <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
-                <nav class="reponsive-nav">
-                    <li><a class="nav-link" href="../index.html#home">Home</a></li>
-                    <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
-                    <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
-                    <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
-                    <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                    <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
-                </nav>
-            </div>
+        <div class="nav-container nav-for-all">
+            <nav class="navbar">
+                <li><a class="nav-link" href="../index.html#home">Home</a></li>
+                <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
+                <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+                <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+                <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
+            </nav>
+        </div>
+        <div class="humberger-container">
+            <div class="close-div"><div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div></div>
+            <nav class="reponsive-nav">
+                <li><a class="nav-link" href="../index.html#home">Home</a></li>
+                <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
+                <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+                <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+                <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
+            </nav>
+        </div>
         <div class="login-contanier">
             <div class="profile-icon">
                 <i class="fa-solid fa-user"></i>
             </div>
             <form action="" class="login-form">
+                <div class="alert">submitted successfully</div>
                 <div class="login-form">
                     <div class="login-input">
-                     <label for="email-login">Email</label>
-                     <input type="email" id="email-login" placeholder="Enter your email" required>
+                        <label for="email-login">Email</label>
+                        <input type="email" id="email-login" placeholder="Enter your email" required>
                     </div>
                     <div class="login-input">
-                     <label for="password-login">Password</label>
-                     <input type="password" id="password-login" placeholder="Enter your password" required>
-                     <p class="error-login-password"></p>
+                        <label for="password-login">Password</label>
+                        <input type="password" id="password-login" placeholder="Enter your password" required>
+                        <p class="error-login-password"></p>
                     </div>
                     <div class="reset-password">
-                     <p class="forgot-password"><a href="#">Forgot password</a></p>
-                     <p class="forgot-password">Don't have account? <a href="./signup.html">Sign up</a></p>
+                        <p class="forgot-password"><a href="#">Forgot password</a></p>
+                        <p class="forgot-password">Don't have account? <a href="./signup.html">Sign up</a></p>
                     </div>
                     <div class="login-input">
-                     <button class="btn login-btn">Login</button>
+                        <button class="btn login-btn">Login</button>
                     </div>
-                 </div>
+                </div>
             </form>
         </div>
     </header>
+    <script defer src="../api/login.js"></script>
 </body>
 </html>
