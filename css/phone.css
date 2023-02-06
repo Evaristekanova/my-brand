@@ -460,7 +460,7 @@
 	/* address div */
 	.contact-container{
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		gap: 35px;
 		/* justify-content: space-around; */
 	}

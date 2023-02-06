@@ -1,3 +1,5 @@
+const preloader = document.getElementById('preloader');
+const wholeContainer = document.querySelector('.whole-cont');
 const nav = document.querySelector('.navbar');
 const humberger = document.querySelector('.humberger-icon');
 const closeHumberger = document.querySelector('.close');
@@ -52,6 +54,8 @@ loginForm.addEventListener('submit', function (e) {
     message.push('incorrect password');
     errorLoginPasswd.innerHTML = message.join(' ');
   } else {
+    wholeContainer.style.display = 'none';
+    preloader.style.display = 'block';
     fetch('https://important-suit-tuna.cyclic.app/api/v1/login', {
       method: 'POST',
       headers: {
@@ -65,19 +69,19 @@ loginForm.addEventListener('submit', function (e) {
     })
       .then((res) => res.json())
       .then((user) => {
-        loginEmail.value = '', 
-        loginPasswd.value = '', 
-        console.log(user);
+        (loginEmail.value = ''), (loginPasswd.value = ''), console.log(user);
         // alertMsg.style.display = 'block';
         // setTimeout(() => {
         //   alertMsg.style.display = 'none';
         // }, 3000);
         const message = user.message;
-        const isAdmin = user.user.isAdmin
+        const isAdmin = user.user.isAdmin;
         const accessToken = user.data;
         console.log(isAdmin);
         if (accessToken) {
           localStorage.setItem('token', JSON.stringify(accessToken));
+          preloader.style.display = 'none';
+          wholeContainer.style.display = 'block';
           if (isAdmin === true) {
             console.log('hey its me again');
             window.location.assign('./dashboard.html');
@@ -88,6 +92,7 @@ loginForm.addEventListener('submit', function (e) {
             );
           }
         }
-      }).catch(err=> console.log(err));
+      })
+      .catch((err) => console.log(err));
   }
 });
