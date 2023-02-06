@@ -69,6 +69,7 @@ async function deleteBlog() {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+      mode: "cors"
     }
   )
     .then((res) => res.json())
