@@ -7,14 +7,17 @@ const layout = document.querySelector('.layout');
 const confirmBox = document.querySelector('.confirm-msg');
 const blogContainerDashoard = document.querySelector('.dashboard-blog-list');
 let blogs, spesfiedBlog;
-
+if (!token) {
+  window.location.assign('../html/login')
+}
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';
-fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
+fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`,{method:'GET'})
   .then((res) => res.json())
   .then((blog) => {
     let allBlogs = blog.data;
     blogs = allBlogs;
+    allBlogs.reverse()
     allBlogs.forEach((el) => {
       blogContainerDashoard.innerHTML += `
         <div class="blog-name">
@@ -64,21 +67,21 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
 async function deleteBlog() {
   await fetch(
     `https://important-suit-tuna.cyclic.app/api/v1/blogs/${spesfiedBlog._id}`,
-    { mode: 'cors' },
     {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
       },
+      mode: "cors"
     }
   )
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
       confirmBox.style.transition = 'all .4s ease-in-out;';
       confirmBox.style.transform = 'scale(0.2)';
       confirmBox.style.transform = 'translateY(-500%)';
       confirmBox.style.display = 'none';
+      window.location.assign('../html/dashboard.html')
       layout.style.display = 'block';
     });
 }

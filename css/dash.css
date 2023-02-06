@@ -168,7 +168,7 @@ a {
   border-radius: 50%;
   padding: 1.5em;
   color: var(--white);
-  background-color: var(--dark-green);
+  /* background-color: var(--dark-green); */
 }
 
 .header i {
@@ -177,6 +177,7 @@ a {
   left: 0;
   z-index: 50;
   font-size: 40px;
+  color: var(--dark-green);
   /* padding-left: 10px; */
 }
 
