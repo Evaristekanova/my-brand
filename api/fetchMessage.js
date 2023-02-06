@@ -5,13 +5,15 @@ const messagesContainer = document.querySelector('.messages-whole-container');
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';
 fetch(`https://important-suit-tuna.cyclic.app/api/v1/messages/all`, {
+  mode:"cors",
   headers: {
-    Authorization: `Bearer ${token}`,
+    'Authorization': `Bearer ${token}`,
   },
 })
   .then((res) => res.json())
   .then((messages) => {
     const allMessages = messages.data;
+    allMessages.reverse()
     allMessages.forEach((el) => {
       messagesContainer.innerHTML += `
         <div class="message-division">
@@ -23,12 +25,18 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/messages/all`, {
                 <p class="posted-image">
                   ${el.messages}
                 </p>
-            <button class="btn dlt-btn"">delete</button>
+            <button class="btn dlt-btn">delete</button>
               </div>
             </div>`;
     });
     preloader.style.display = 'none';
     wholeContainer.style.display = 'block';
+    const deleteBtn = document.querySelectorAll('.dlt-btn');
+    deleteBtn.forEach(el => {
+      el.addEventListener('click', function () {
+        
+      })
+    })
   })
   .catch((err) => {
     console.log(err);

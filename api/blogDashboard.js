@@ -7,7 +7,9 @@ const layout = document.querySelector('.layout');
 const confirmBox = document.querySelector('.confirm-msg');
 const blogContainerDashoard = document.querySelector('.dashboard-blog-list');
 let blogs, spesfiedBlog;
-
+if (!token) {
+  window.location.assign('../html/login')
+}
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';
 fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`,{method:'GET'})
@@ -15,6 +17,7 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`,{method:'GET'})
   .then((blog) => {
     let allBlogs = blog.data;
     blogs = allBlogs;
+    allBlogs.reverse()
     allBlogs.forEach((el) => {
       blogContainerDashoard.innerHTML += `
         <div class="blog-name">
