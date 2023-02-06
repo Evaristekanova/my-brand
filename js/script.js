@@ -1,8 +1,6 @@
 'use strict';
 const preloader = document.getElementById('preloader');
-window.addEventListener('load', ()=>{
-  preloader.style.display = 'none'
-})
+const wholeContainer = document.querySelector('.whole-cont');
 ////////////////////selection//////////////
 const fullHeader = document.querySelector('#home');
 const nav = document.querySelector('.navbar');
@@ -125,7 +123,7 @@ intersectionAPI.observe(fullHeader);
 const messagesStore = JSON.parse(
   localStorage.getItem('contactMessages') || '[]'
 );
-contactForm.addEventListener('submit', function (e) {
+contactForm.addEventListener('submit', async function (e) {
   e.preventDefault();
   let resMessage;
   const message = [];
@@ -149,7 +147,9 @@ contactForm.addEventListener('submit', function (e) {
       email: emailContact.value,
       messages: textarea.value,
     };
-    fetch('https://important-suit-tuna.cyclic.app/api/v1/messages', {
+    wholeContainer.style.display = 'none';
+    preloader.style.display = 'block';
+    await fetch('https://important-suit-tuna.cyclic.app/api/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -157,19 +157,24 @@ contactForm.addEventListener('submit', function (e) {
       body: JSON.stringify(messageBox),
     })
       .then((res) => res.json())
-      .then((data) => (resMessage = data.message))
+      .then((data) => {
+        resMessage = data.message;
+        preloader.style.display = 'none';
+        wholeContainer.style.display = 'block';
+        textarea.value =
+          firstName.value =
+          secondName.value =
+          emailContact.value =
+            '';
+        errorFname.innerHTML = '';
+        emailError.innerHTML = '';
+        textareaError.innerHTML = '';
+        window.location.assign('../index.html#contact')
+        alertMsg.style.display = 'block';
+        setTimeout(() => {
+          alertMsg.style.display = 'none';
+        }, 3000);
+      })
       .catch((err) => console.log(err));
-    textarea.value =
-      firstName.value =
-      secondName.value =
-      emailContact.value =
-        '';
-    errorFname.innerHTML = '';
-    emailError.innerHTML = '';
-    textareaError.innerHTML = '';
-    alertMsg.style.display = 'block';
-    setTimeout(() => {
-      alertMsg.style.display = 'none';
-    }, 3000);
-  }
-});
+    }
+  });

@@ -1,19 +1,17 @@
-const token = JSON.parse(localStorage.getItem('token'))
+const preloader = document.getElementById('preloader');
+const wholeContainer = document.querySelector('.whole-cont');
+const token = JSON.parse(localStorage.getItem('token'));
 const messagesContainer = document.querySelector('.messages-whole-container');
-fetch(
-  `https://important-suit-tuna.cyclic.app/api/v1/messages/all`,
-  {
-    headers: {
-      "Authorization": `Bearer ${token}`,
-    },
-  }
-)
+wholeContainer.style.display = 'none';
+preloader.style.display = 'block';
+fetch(`https://important-suit-tuna.cyclic.app/api/v1/messages/all`, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+})
   .then((res) => res.json())
   .then((messages) => {
-    console.log(token);
-    console.log(messages);
     const allMessages = messages.data;
-    console.log(allMessages);
     allMessages.forEach((el) => {
       messagesContainer.innerHTML += `
         <div class="message-division">
@@ -25,9 +23,12 @@ fetch(
                 <p class="posted-image">
                   ${el.messages}
                 </p>
+            <button class="btn dlt-btn"">delete</button>
               </div>
             </div>`;
     });
+    preloader.style.display = 'none';
+    wholeContainer.style.display = 'block';
   })
   .catch((err) => {
     console.log(err);
