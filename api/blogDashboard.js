@@ -29,7 +29,6 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`,{method:'GET'})
             <button class="btn dlt-btn"">delete</button>
         </div>
         </div> `;
-      // console.log(el.id);
     });
     preloader.style.display = 'none';
     wholeContainer.style.display = 'block';
