@@ -5,6 +5,7 @@ const yes = document.getElementById('yes');
 const no = document.getElementById('no');
 const layout = document.querySelector('.layout');
 const confirmBox = document.querySelector('.confirm-msg');
+const alertMsg = document.querySelector('.alert');
 const blogContainerDashoard = document.querySelector('.dashboard-blog-list');
 const form = document.getElementById('form');
 const imageId = document.getElementById('ffile');
@@ -79,6 +80,9 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`, {
         upBlog.style.display = 'block';
         spesfiedBlog = blogs[i];
         console.log(spesfiedBlog);
+        blogTitle.value = spesfiedBlog.title;
+        smallDescription.value = spesfiedBlog.shortDescription;
+        blogFullDescription.textContent = spesfiedBlog.fullDescription;
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           console.log('clicked');
@@ -138,10 +142,14 @@ async function updateBlog(data) {
       console.log(result);
       blogTitle.value = '';
       smallDescription.value = '';
-      blogFullDescription.value = '';
+      blogFullDescription.textContent = '';
       imageId.files[0] = null;
       wholeContainer.style.display = 'block';
       preloader.style.display = 'none';
+      alertMsg.style.display = 'block';
+      setTimeout(async () => {
+        alertMsg.style.display = 'none';
+      }, 3000);
       normal.style.display = 'block';
       upBlog.style.display = 'none';
     });

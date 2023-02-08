@@ -2,6 +2,7 @@ let parameter = new URLSearchParams(window.location.search);
 const preloader = document.getElementById('preloader');
 const wholeContainer = document.querySelector('.whole-cont');
 const id = parameter.get('id');
+const commentContainer = document.getElementById('comment-holder');
 const singleBlog = document.querySelector('.blog-single');
 const curImage = document.getElementById('current-blog');
 const curTitle = document.getElementById('current-title');
@@ -10,14 +11,19 @@ const blogToBeCurrent = document.getElementById('aBlog-listed');
 const postComment = document.getElementById('post-btn');
 const readBlog = document.querySelector('.single-blog-page-container');
 const blogListContainer = document.querySelector('.blog-list-container');
+const messageDivisionContainer = document.querySelector('.blogs-block-single');
+const article = document.querySelector('.article');
 let content = '';
+let postComments;
 // GET all BLOGS from api
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';
+let everyBlog;
 fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
   .then((res) => res.json())
   .then((blog) => {
     const allBlogs = blog.data;
+    everyBlog = allBlogs;
     latestBlog = allBlogs.slice(-3);
     allBlogs.forEach((el) => {
       content += `
@@ -29,13 +35,14 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
     </div>
 </div>
     `;
-      let curContentPost;
-      let parameter = new URLSearchParams(window.location.search);
-      const id = parameter.get('id');
-      url = id;
-      allBlogs.find((blog) => {
-        if (blog._id === id) {
-          curContentPost = `
+    });
+    let curContentPost;
+    let parameter = new URLSearchParams(window.location.search);
+    const id = parameter.get('id');
+    url = id;
+    allBlogs.find((blog) => {
+      if (blog._id === id) {
+        curContentPost = `
             <img id="current-blog" src="${blog.imageUrl}">
             <div class="article">
                 <h3 class="blog-title" id="current-title">${blog.title}</h3>
@@ -44,15 +51,70 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
                 </p>
                 <div class="blog-comment">
                     <h3 class="add-comment-title">Add your comment</h3>
-                    <input type="text" name="" id="commenter" placeholder="Enter your names here" required>
                     <textarea id="write-comment" placeholder="Add your comment here" required></textarea>
                 </div>
-                    <button class="btn post-btn" onClick = "postMessage()">post</button>
-            </div>
+                <button id="post-btn" class="btn post-btn">post</button>
+                </div>
         `;
-          singleBlog.innerHTML = curContentPost;
+        singleBlog.innerHTML = curContentPost;
+        const form = document.getElementById('form');
+        const postComment = document.getElementById('post-btn');
+        postComment.addEventListener('click', function (e) {
+          e.preventDefault();
+          console.log('clicked');
+          // const comment = document.getElementById('write-comment').value;
+          // const commentContent = comment.value;
+          // fetch(
+          //   `https://important-suit-tuna.cyclic.app/api/v1/blogs/${blog._id}/newcomment`,
+          //   {
+          //     mode: 'cors',
+          //     method: 'POST',
+          //     headers: {
+          //       'Content-Type': 'application/json',
+          //       Authorization: `Bearer ${localStorage.getItem('token')}`,
+          //     },
+          //     // body: JSON.stringify({commentContent})
+          //   }
+          // )
+          //   .then((res) => res.json())
+          //   .then((comment) => console.log(comment));
+        });
+        console.log(postComment);
+        if (blog.comments.length > 0) {
+          fetch(
+            `https://important-suit-tuna.cyclic.app/api/v1/blogs/${blog._id}/comments`,
+            {
+              mode: 'cors',
+              method: 'GET',
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              // console.log(data);
+              const theseComments = data.data.filter(
+                (comment) => comment.blog === blog._id
+              );
+              // console.log(theseComments);
+              let comments = '';
+              theseComments.forEach((comment) => {
+                comments = `
+            <div class="dash-message">
+            <div class="user">
+            <h4 class="user-message">${comment.userName}</h4>
+            </div>
+            <p class="posted-comment">
+            ${comment.commentContent}
+            </p>
+            </div>
+            `;
+                singleBlog.innerHTML += comments;
+              });
+            });
+        } else {
+          comments = 'no comments yet';
+          singleBlog.innerHTML += comments;
         }
-      });
+      }
     });
     blogListContainer.innerHTML = content;
     preloader.style.display = 'none';

@@ -31,6 +31,14 @@ body {
     display: none;
 }
 /* =====================alert popup messages================ */
+.alert{
+    padding: 10px 15px;
+    text-align: center;
+    background-color: var(--dark-green);
+    font-weight: 400;
+    border-radius: 10px;
+    display: none;
+}
 .confirm-msg{
   text-align: center;
   place-items: center;
