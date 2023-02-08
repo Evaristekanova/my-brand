@@ -157,6 +157,12 @@ a {
   align-items: center;
   justify-content: center;
 }
+#update-cont{
+  display: none;
+}
+#normal{
+  display: block;
+}
 
 .header {
   z-index: 2;

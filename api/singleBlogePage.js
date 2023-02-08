@@ -1,4 +1,6 @@
 let parameter = new URLSearchParams(window.location.search);
+const preloader = document.getElementById('preloader');
+const wholeContainer = document.querySelector('.whole-cont');
 const id = parameter.get('id');
 const singleBlog = document.querySelector('.blog-single');
 const curImage = document.getElementById('current-blog');
@@ -10,6 +12,8 @@ const readBlog = document.querySelector('.single-blog-page-container');
 const blogListContainer = document.querySelector('.blog-list-container');
 let content = '';
 // GET all BLOGS from api
+wholeContainer.style.display = 'none';
+preloader.style.display = 'block';
 fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
   .then((res) => res.json())
   .then((blog) => {
@@ -51,6 +55,8 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
       });
     });
     blogListContainer.innerHTML = content;
+    preloader.style.display = 'none';
+    wholeContainer.style.display = 'block';
   })
   .catch((err) => {
     console.log(err);

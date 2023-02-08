@@ -4,6 +4,12 @@ const token = JSON.parse(localStorage.getItem('token'));
 const messagesContainer = document.querySelector('.messages-whole-container');
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';
+const logout = document.getElementById('logout');
+logout.addEventListener('click', function (e) {
+  e.preventDefault();
+  localStorage.removeItem('token');
+  window.location.assign('../index.html');
+})
 fetch(`https://important-suit-tuna.cyclic.app/api/v1/messages/all`, {
   mode: 'cors',
   headers: {

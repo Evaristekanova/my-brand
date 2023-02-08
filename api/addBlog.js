@@ -1,7 +1,12 @@
 'use strict';
+logout.addEventListener('click', function (e) {
+  e.preventDefault();
+  localStorage.removeItem('token');
+  window.location.assign('../index.html');
+});
 const token = JSON.parse(localStorage.getItem('token'));
 if (!token) {
-    window.location.assign('../html/login.html')
+  window.location.assign('../html/login.html');
 }
 // ==================all decralation=====================//
 const form = document.getElementById('form');
