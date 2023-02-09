@@ -14,7 +14,16 @@ const loginEmail = document.getElementById('email-login');
 const loginPasswd = document.getElementById('password-login');
 const alertMsg = document.querySelector('.alert');
 // ========================form submission====================///
-
+let defaultBlog;
+fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`, {
+  method: 'GET',
+})
+  .then((res) => res.json())
+  .then((blog) => {
+    const allBlogs = blog.data;
+    blogs = allBlogs.reverse();
+    defaultBlog = blogs[0];
+  });
 const humbergerIcon = humberger.addEventListener('click', function () {
   humbergerContainer.style.visibility = 'visible';
   humbergerContainer.classList.add('active');
@@ -69,7 +78,7 @@ loginForm.addEventListener('submit', function (e) {
     })
       .then((res) => res.json())
       .then((user) => {
-        (loginEmail.value = ''), (loginPasswd.value = ''), console.log(user);
+        (loginEmail.value = ''), (loginPasswd.value = '');
         // alertMsg.style.display = 'block';
         // setTimeout(() => {
         //   alertMsg.style.display = 'none';
@@ -87,8 +96,9 @@ loginForm.addEventListener('submit', function (e) {
             window.location.assign('./dashboard.html');
           } else {
             console.log('okay');
+
             window.location.assign(
-              './readSingleBlog.html?id=63d7428dd50a2dbceb79ec91'
+              `./readSingleBlog.html?id=${defaultBlog._id}`
             );
           }
         }

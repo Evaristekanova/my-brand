@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../css/dash.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
@@ -46,13 +50,38 @@
               >
             </li>
             <li>
-              <a class="sidebar-list-item" href="../index.html">
+              <a id="logout" class="sidebar-list-item" href="../index.html">
                 <i class="fas fa-calendar icon"></i><em>Logout</em></a
               >
             </li>
           </ul>
         </div>
-        <main class="content">
+        <main id="update-cont" class="content">
+          <div class="main-header">
+            <div class="main-title">
+              <h1>Update Blog</h1>
+            </div>
+            <div class="main-form">
+              <form id="form" name="blog">
+                <div class="alert">Updated successfully</div>
+                <input type="file" id="ffile" placeholder="Add title" />
+                <input type="text" id="ftitle" placeholder="Add title" />
+                <input
+                  type="text"
+                  id="small-description"
+                  placeholder="Add description"
+                />
+                <div id="editor">
+                  <p></p>
+                  <p></p>
+                  <p><br /></p>
+                </div>
+                <input type="submit" id="fsubmit" value="Save" class="button" />
+              </form>
+            </div>
+          </div>
+        </main>
+        <main id="normal" class="content">
           <div class="main-header main-header-dashboard">
             <div class="main-title">
               <h1>Welcome to the dashboard</h1>
@@ -63,5 +92,11 @@
       </div>
     </div>
     <script src="../api/blogDashboard.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+      var quill = new Quill('#editor', {
+        theme: 'snow',
+      });
+    </script>
   </body>
 </html>
