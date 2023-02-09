@@ -45,14 +45,14 @@ nav.addEventListener('click', function (e) {
     document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
   }
 });
-resNav.addEventListener('click', function (e) {
-  const link = e.target;
-  if (link.classList.contains('nav-link')) {
-    e.preventDefault();
-    const linkId = link.getAttribute('href');
-    document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
-  }
-});
+// resNav.addEventListener('click', function (e) {
+//   const link = e.target;
+//   if (link.classList.contains('nav-link')) {
+//     e.preventDefault();
+//     const linkId = link.getAttribute('href');
+    // document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
+//   }
+// });
 // =============login form validation==================//
 loginForm.addEventListener('submit', function (e) {
   errorLoginPasswd.style.color = 'red';
