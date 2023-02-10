@@ -28,7 +28,9 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
       content += `
     <div class="blog-single-list">
     <div class="article-list">
-        <a class="blog-link" href ='../html/readSingleBlog.html?id=${el._id}'id='aBlog-listed'><h3 class="blog-title">${el.title}</h3></a>
+        <a class="blog-link" href ='../html/readSingleBlog.html?id=${el._id}'id='aBlog-listed'>
+        <h3 class="blog-title">${el.title}</h3>
+        </a>
         <p>
             ${el.shortDescription}
     </div>
@@ -67,9 +69,9 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
             .then((res) => res.json())
             .then((data) => {
               // console.log(data);
-              const theseComments = data.data.filter(
-                (comment) => comment.blog === blog._id
-              ).reverse();
+              const theseComments = data.data
+                .filter((comment) => comment.blog === blog._id)
+                .reverse();
               // console.log(theseComments);
               let comments = '';
               theseComments.forEach((comment) => {
@@ -101,10 +103,10 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
   });
 function postMessage() {
   const token = JSON.parse(localStorage.getItem('token'));
-  if (!token) { 
+  if (!token) {
     alert('Please login to comment');
     window.location.assign('../html/login.html');
-    return
+    return;
   }
   const commentField = document.getElementById('write-comment');
   const comment = document.getElementById('write-comment').value;
