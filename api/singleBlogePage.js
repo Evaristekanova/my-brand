@@ -102,7 +102,9 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
 function postMessage() {
   const token = JSON.parse(localStorage.getItem('token'));
   if (!token) { 
-    return alert('Please login to comment');
+    alert('Please login to comment');
+    window.location.assign('../html/login.html');
+    return
   }
   const commentField = document.getElementById('write-comment');
   const comment = document.getElementById('write-comment').value;
