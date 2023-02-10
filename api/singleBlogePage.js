@@ -100,7 +100,6 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
     console.log(err);
   });
 function postMessage() {
-  console.log('clicked');
   const token = JSON.parse(localStorage.getItem('token'));
   if (!token) { 
     return alert('Please login to comment');

@@ -40,14 +40,18 @@ form.addEventListener('submit', (event) => {
     .then((response) => response.json())
     .then((blog) => {
       console.log(blog);
-
+      if (blog.message === 'all fields are required') {
+        preloader.style.display = 'none';
+        wholeContainer.style.display = 'block';
+        return alert('all fields are required');
+      }
       blogTitle.value = '';
       smallDescription.value = '';
       blogFullDescription.textContent = '';
       imageId.value = null;
       preloader.style.display = 'none';
       wholeContainer.style.display = 'block';
-        alertMsg.style.display = 'block';
+      alertMsg.style.display = 'block';
       setTimeout(async () => {
         alertMsg.style.display = 'none';
       }, 3000);

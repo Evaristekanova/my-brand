@@ -13,6 +13,7 @@ const loginForm = document.querySelector('.login-form');
 const loginEmail = document.getElementById('email-login');
 const loginPasswd = document.getElementById('password-login');
 const alertMsg = document.querySelector('.alert');
+let blogs;
 // ========================form submission====================///
 let defaultBlog;
 fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`, {
@@ -50,7 +51,7 @@ nav.addEventListener('click', function (e) {
 //   if (link.classList.contains('nav-link')) {
 //     e.preventDefault();
 //     const linkId = link.getAttribute('href');
-    // document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
+// document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
 //   }
 // });
 // =============login form validation==================//
@@ -78,11 +79,13 @@ loginForm.addEventListener('submit', function (e) {
     })
       .then((res) => res.json())
       .then((user) => {
+        console.log(user);
+        if (user.message === 'incorrect username or password') {
+          preloader.style.display = 'none';
+          wholeContainer.style.display = 'block';
+          return alert('incorrect username or password');
+        }
         (loginEmail.value = ''), (loginPasswd.value = '');
-        // alertMsg.style.display = 'block';
-        // setTimeout(() => {
-        //   alertMsg.style.display = 'none';
-        // }, 3000);
         const message = user.message;
         const isAdmin = user.user.isAdmin;
         const accessToken = user.data;

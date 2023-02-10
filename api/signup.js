@@ -83,6 +83,12 @@ signUpForm.addEventListener('submit', async function (e) {
     })
       .then((res) => res.json())
       .then((user) => {
+        console.log(user);
+        if (user?.error) {
+          preloader.style.display = 'none';
+          wholeContainer.style.display = 'block';
+          return alert('Email already taken');
+         }
         preloader.style.display = 'none';
         wholeContainer.style.display = 'block';
         nameForm.value =
