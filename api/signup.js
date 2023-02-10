@@ -1,5 +1,7 @@
 'use strict';
 // ====================== javascript variable decralation =======================//
+const preloader = document.getElementById('preloader');
+const wholeContainer = document.querySelector('.whole-cont');
 const alertMsg = document.querySelector('.alert');
 const signUpForm = document.querySelector('.signup-form');
 const nameForm = document.getElementById('name-signup');
@@ -38,14 +40,14 @@ nav.addEventListener('click', function (e) {
     document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
   }
 });
-resNav.addEventListener('click', function (e) {
-  const link = e.target;
-  if (link.classList.contains('nav-link')) {
-    e.preventDefault();
-    const linkId = link.getAttribute('href');
-    document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
-  }
-});
+// resNav.addEventListener('click', function (e) {
+//   const link = e.target;
+//   if (link.classList.contains('nav-link')) {
+//     e.preventDefault();
+//     const linkId = link.getAttribute('href');
+//     document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
+//   }
+// });
 // ======================= sign up form validation======================//
 signUpForm.addEventListener('submit', async function (e) {
   e.preventDefault();
@@ -55,11 +57,11 @@ signUpForm.addEventListener('submit', async function (e) {
   if (createPassword.value.length < 8) {
     message.push('password is not long enough');
     error.innerHTML = message.join(' ');
-    return
+    return;
   } else if (createPassword.value.length > 15) {
     message.push('password is longer than enough');
     error.innerHTML = message.join(' ');
-    return
+    return;
   } else if (
     createPassword.value.length >= 8 &&
     createPassword.value.length <= 15 &&
@@ -70,6 +72,8 @@ signUpForm.addEventListener('submit', async function (e) {
       email: emailForSignUp.value,
       password: createPassword.value,
     };
+    wholeContainer.style.display = 'none';
+    preloader.style.display = 'block';
     await fetch('https://important-suit-tuna.cyclic.app/api/v1/users', {
       method: 'POST',
       headers: {
@@ -78,20 +82,22 @@ signUpForm.addEventListener('submit', async function (e) {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((user) => console.log(user))
+      .then((user) => {
+        preloader.style.display = 'none';
+        wholeContainer.style.display = 'block';
+        nameForm.value =
+          emailForSignUp.value =
+          createPassword.value =
+          ConfirmPassword.value =
+            '';
+        alertMsg.style.display = 'block';
+        setTimeout(() => {
+          alertMsg.style.display = 'none';
+        }, 3000);
+      })
       .catch((err) => console.log(err));
-    nameForm.value =
-      emailForSignUp.value =
-      createPassword.value =
-      ConfirmPassword.value =
-        '';
-    alertMsg.style.display = 'block';
-    setTimeout(() => {
-      alertMsg.style.display = 'none';
-    }, 3000);
+  } else {
+    message.push('incorrect password');
+    errorConfirm.innerHTML = message.join(' ');
   }
-else{
-    message.push('incorrect password')
-    errorConfirm.innerHTML = message.join(' ')
-}
-})
+});

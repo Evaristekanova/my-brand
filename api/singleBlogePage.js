@@ -8,7 +8,6 @@ const curImage = document.getElementById('current-blog');
 const curTitle = document.getElementById('current-title');
 const curParagraph = document.getElementById('current-paragraph');
 const blogToBeCurrent = document.getElementById('aBlog-listed');
-const postComment = document.getElementById('post-btn');
 const readBlog = document.querySelector('.single-blog-page-container');
 const blogListContainer = document.querySelector('.blog-list-container');
 const messageDivisionContainer = document.querySelector('.blogs-block-single');
@@ -53,33 +52,10 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
                     <h3 class="add-comment-title">Add your comment</h3>
                     <textarea id="write-comment" placeholder="Add your comment here" required></textarea>
                 </div>
-                <button id="post-btn" class="btn post-btn">post</button>
+                    <button class="btn post-btn" onClick = "postMessage()">post</button>
                 </div>
         `;
         singleBlog.innerHTML = curContentPost;
-        const form = document.getElementById('form');
-        const postComment = document.getElementById('post-btn');
-        postComment.addEventListener('click', function (e) {
-          e.preventDefault();
-          console.log('clicked');
-          // const comment = document.getElementById('write-comment').value;
-          // const commentContent = comment.value;
-          // fetch(
-          //   `https://important-suit-tuna.cyclic.app/api/v1/blogs/${blog._id}/newcomment`,
-          //   {
-          //     mode: 'cors',
-          //     method: 'POST',
-          //     headers: {
-          //       'Content-Type': 'application/json',
-          //       Authorization: `Bearer ${localStorage.getItem('token')}`,
-          //     },
-          //     // body: JSON.stringify({commentContent})
-          //   }
-          // )
-          //   .then((res) => res.json())
-          //   .then((comment) => console.log(comment));
-        });
-        console.log(postComment);
         if (blog.comments.length > 0) {
           fetch(
             `https://important-suit-tuna.cyclic.app/api/v1/blogs/${blog._id}/comments`,
@@ -93,7 +69,7 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
               // console.log(data);
               const theseComments = data.data.filter(
                 (comment) => comment.blog === blog._id
-              );
+              ).reverse();
               // console.log(theseComments);
               let comments = '';
               theseComments.forEach((comment) => {
@@ -123,3 +99,37 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
   .catch((err) => {
     console.log(err);
   });
+function postMessage() {
+  console.log('clicked');
+  const token = JSON.parse(localStorage.getItem('token'));
+  if (!token) { 
+    return alert('Please login to comment');
+  }
+  const commentField = document.getElementById('write-comment');
+  const comment = document.getElementById('write-comment').value;
+  if (comment == '' || comment.trim() == '') {
+    return alert('Please enter a comment');
+  }
+  const commentContent = comment;
+  wholeContainer.style.display = 'none';
+  preloader.style.display = 'block';
+  fetch(
+    `https://important-suit-tuna.cyclic.app/api/v1/blogs/${id}/newcomment`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`,
+      },
+      body: JSON.stringify({ commentContent }),
+    }
+  )
+    .then((res) => res.json())
+    .then((comment) => {
+      console.log(comment);
+      commentField.value = '';
+      window.location.reload();
+      preloader.style.display = 'none';
+      wholeContainer.style.display = 'block';
+    });
+}
