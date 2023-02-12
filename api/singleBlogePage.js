@@ -14,6 +14,35 @@ const messageDivisionContainer = document.querySelector('.blogs-block-single');
 const article = document.querySelector('.article');
 let content = '';
 let postComments;
+
+const nav = document.querySelector('.navbar');
+const humberger = document.querySelector('.humberger-icon');
+const closeHumberger = document.querySelector('.close');
+const humbergerContainer = document.querySelector('.humberger-container');
+const resNav = document.querySelector('.reponsive-nav');
+const navContainer = document.querySelector('.nav-container');
+const normalLink = document.querySelectorAll('.nav-link');
+const humbergerIcon = humberger.addEventListener('click', function () {
+  humbergerContainer.style.visibility = 'visible';
+  humbergerContainer.classList.add('active');
+  humberger.style.visibility = 'hidden';
+});
+const humbergerCloseIcon = closeHumberger.addEventListener(
+  'click',
+  function () {
+    humbergerContainer.style.visibility = 'hidden';
+    humbergerContainer.classList.remove('active');
+    humberger.style.visibility = 'visible';
+  }
+);
+nav.addEventListener('click', function (e) {
+  // e.preventDefault()
+  const link = e.target;
+  if (link.classList.contains('nav-link')) {
+    const linkId = link.getAttribute('href');
+    document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
+  }
+});
 // GET all BLOGS from api
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';

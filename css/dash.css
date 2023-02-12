@@ -343,7 +343,6 @@ form input {
   color: var(--white);
 }
 .sidebar {
-  /* width: 4em; */
   left: 0;
   display: none;
   transition: all .3s ease-in-out;
@@ -361,7 +360,8 @@ form input {
   color: var(--white);
   border: 1px solid white;
   margin: 20px 0 10px 0;
-  height: 70px;
+  height: 100px;
+  overflow: scroll;
 }
 .main-header .main-form form .button {
   width: 50%;
