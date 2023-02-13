@@ -87,8 +87,11 @@ signUpForm.addEventListener('submit', async function (e) {
         if (user?.error) {
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';
-          return alert('Email already taken');
-         }
+          preloader.style.display = 'none';
+          wholeContainer.style.display = 'block';
+          alert('Email already taken');
+          return;
+        }
         preloader.style.display = 'none';
         wholeContainer.style.display = 'block';
         nameForm.value =
@@ -100,6 +103,9 @@ signUpForm.addEventListener('submit', async function (e) {
         setTimeout(() => {
           alertMsg.style.display = 'none';
         }, 3000);
+        const token = user.token;
+        localStorage.setItem('token', JSON.stringify(token));
+        window.location.assign('../index.html#blogs')
       })
       .catch((err) => console.log(err));
   } else {

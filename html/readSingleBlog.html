@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single blog</title>
+    <link rel="shortcut icon" href="./img/passport.jpeg" type="image.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/tablet.css" />
     <link rel="stylesheet" href="../css/phone.css" />
@@ -12,17 +17,53 @@
   <body>
     <div id="preloader"></div>
     <div class="whole-cont">
-      <div class="back-to-home-btn">
+      <!-- <div class="back-to-home-btn">
         <a href="../index.html" class="back-btn">Back</a>
+      </div> -->
+      <div class="humberger">
+        <span class="humberger-icon"><i class="fa-solid fa-bars"></i></span>
+      </div>
+      <div class="nav-container nav-for-all">
+        <nav class="navbar">
+          <li><a class="nav-link" href="../index.html#home">Home</a></li>
+          <li>
+            <a class="nav-link" href="../index.html#skills">About Me</a>
+          </li>
+          <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+          <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+          <li>
+            <a class="nav-link" href="../index.html#contact">Contact</a>
+          </li>
+          <li><a class="nav-link" id="log" href="./login.html">Login</a></li>
+        </nav>
+      </div>
+      <div class="humberger-container">
+        <div class="close-div">
+          <div>
+            <span class="close"
+              ><i class="fa-sharp fa-solid fa-xmark"></i
+            ></span>
+          </div>
+        </div>
+        <nav class="reponsive-nav">
+          <li><a class="nav-link" href="../index.html#home">Home</a></li>
+          <li>
+            <a class="nav-link" href="../index.html#skills">About Me</a>
+          </li>
+          <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+          <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+          <li>
+            <a class="nav-link" href="../index.html#contact">Contact</a>
+          </li>
+          <li><a id="log" class="nav-link" href="./login.html">Login</a></li>
+        </nav>
       </div>
       <section class="section single-blog-page">
         <div class="single-blog-page-container">
           <div class="sinlge-blog-and-message">
             <div class="blogs-block-single">
               <div class="blog-single">
-                <div class="article">
-                    
-                </div>
+                <div class="article"></div>
               </div>
             </div>
           </div>
@@ -30,6 +71,7 @@
         </div>
       </section>
     </div>
+    <script src="../api/logout.js"></script>
     <script src="../api/singleBlogePage.js"></script>
   </body>
 </html>
