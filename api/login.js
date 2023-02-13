@@ -13,6 +13,7 @@ const loginForm = document.querySelector('.login-form');
 const loginEmail = document.getElementById('email-login');
 const loginPasswd = document.getElementById('password-login');
 const alertMsg = document.querySelector('.alert');
+const snackbar = document.querySelector('.snackbar');
 let blogs;
 // ========================form submission====================///
 let defaultBlog;
@@ -46,14 +47,6 @@ nav.addEventListener('click', function (e) {
     document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
   }
 });
-// resNav.addEventListener('click', function (e) {
-//   const link = e.target;
-//   if (link.classList.contains('nav-link')) {
-//     e.preventDefault();
-//     const linkId = link.getAttribute('href');
-// document.querySelector(linkId).scrollIntoView({ behavior: 'smooth' });
-//   }
-// });
 // =============login form validation==================//
 loginForm.addEventListener('submit', function (e) {
   errorLoginPasswd.style.color = 'red';
@@ -83,7 +76,11 @@ loginForm.addEventListener('submit', function (e) {
         if (user.message === 'incorrect username or password') {
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';
-          return alert('incorrect username or password');
+          snackbar.style.display = 'grid';
+          setTimeout(() => {
+            snackbar.style.display = 'none';
+          }, 3500);
+          return
         }
         (loginEmail.value = ''), (loginPasswd.value = '');
         const message = user.message;

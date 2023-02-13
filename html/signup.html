@@ -1,78 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>signup</title>
-    <link rel="shortcut icon" href="./img/passport.jpeg" type="image.jpeg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tablet.css">
-    <link rel="stylesheet" href="../css/phone.css">
-</head>
-<body>
+    <link rel="shortcut icon" href="../img/passport.jpeg" type="image.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/tablet.css" />
+    <link rel="stylesheet" href="../css/phone.css" />
+  </head>
+  <body>
     <div id="preloader"></div>
     <div class="whole-cont">
-        <div class="humberger"><span class="humberger-icon"><i class="fa-solid fa-bars"></i></span></i></div>
-    <header class="login-header">
+      <div class="humberger">
+        <span class="humberger-icon"><i class="fa-solid fa-bars"></i></span>
+      </div>
+      <div class="snackbar">
+        <h1 class="snackbar_message">Email already taken</h1>
+      </div>
+      <header class="login-header">
         <div class="nav-container nav-for-all">
-            <nav class="navbar">
-                <li><a class="nav-link" href="../index.html#home">Home</a></li>
-                <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
-                <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
-                <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
-                <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
-            </nav>
+          <nav class="navbar">
+            <li><a class="nav-link" href="../index.html#home">Home</a></li>
+            <li>
+              <a class="nav-link" href="../index.html#skills">About Me</a>
+            </li>
+            <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+            <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+            <li>
+              <a class="nav-link" href="../index.html#contact">Contact</a>
+            </li>
+            <li><a class="nav-link" href="./login.html" id="log">Login</a></li>  
+          </nav>
         </div>
         <div class="humberger-container">
-            <div class="close-div">
-                <div><span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span></div>
+          <div class="close-div">
+            <div>
+              <span class="close"
+                ><i class="fa-sharp fa-solid fa-xmark"></i
+              ></span>
             </div>
-            <nav class="reponsive-nav">
-                <li><a class="nav-link" href="../index.html#home">Home</a></li>
-                <li><a class="nav-link" href="../index.html#skills">About Me</a></li>
-                <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
-                <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
-                <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
-            </nav>
+          </div>
+          <nav class="reponsive-nav">
+            <li><a class="nav-link" href="../index.html#home">Home</a></li>
+            <li>
+              <a class="nav-link" href="../index.html#skills">About Me</a>
+            </li>
+            <li><a class="nav-link" href="../index.html#mywork">My work</a></li>
+            <li><a class="nav-link" href="../index.html#blogs">Blogs</a></li>
+            <li>
+              <a class="nav-link" href="../index.html#contact">Contact</a>
+            </li>
+            <li><a class="nav-link" href="./login.html" id="log">Login</a></li>  
+          </nav>
         </div>
         <div class="login-contanier">
-            <form action="" class="signup-form">
-                <div class="alert">submitted successfully</div>
-                <div class="login-form"><div class="login-input">
-                    <label for="name-signup">Name</label>
-                    <input type="text" id="name-signup" placeholder="Enter your name" required>
-                    <p class="error"></p>
-                </div>
-                    <div class="login-input">
-                     <label for="email-signup">Email</label>
-                     <input type="email" id="email-signup" placeholder="Enter your email" required>
-                    </div>
-                    <div class="login-input">
-                     <label for="create-password">Password</label>
-                     <input type="password" id="create-password" placeholder="Enter your password" required>
-                     <p class="error"></p>
-                    </div>
-                    <div class="login-input">
-                     <label for="confirm-password">Confirm Password</label>
-                     <input type="password" id="confirm-password" placeholder="Confirm password" required>
-                     <p class="error-confirm"></p>
-                    </div>
-                    <div class="reset-password">
-                     <p class="forgot-password">Already have account? <a href="./login.html">login</a></p>
-                    </div>
-                    <div class="login-input">
-                     <button class="btn signup-btn">Sign up</button>
-                    </div>
-                </div>
-            </form>
+          <form action="" class="signup-form">
+            <div class="alert">submitted successfully</div>
+            <div class="login-form">
+              <div class="login-input">
+                <label for="name-signup">Name</label>
+                <input
+                  type="text"
+                  id="name-signup"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="login-input">
+                <label for="email-signup">Email</label>
+                <input
+                  type="email"
+                  id="email-signup"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="login-input">
+                <label for="create-password">Password</label>
+                <input
+                  type="password"
+                  id="create-password"
+                  placeholder="Enter your password"
+                  required
+                />
+                <p class="error"></p>
+              </div>
+              <div class="login-input">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  placeholder="Confirm password"
+                  required
+                />
+                <p class="error-confirm"></p>
+              </div>
+              <div class="reset-password">
+                <p class="forgot-password">
+                  Already have account? <a href="./login.html">login</a>
+                </p>
+              </div>
+              <div class="login-input">
+                <button class="btn signup-btn">Sign up</button>
+              </div>
+            </div>
+          </form>
         </div>
-    </header>
+      </header>
     </div>
-</body>
-<!-- <script src="../js/script.js"></script> -->
-<script src="../api//signup.js"></script>
+  </body>
+  <!-- <script src="../js/script.js"></script> -->
+  <script src="../api/logout.js"></script>
+  <script src="../api/signup.js"></script>
 </html>
