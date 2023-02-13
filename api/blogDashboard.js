@@ -84,7 +84,7 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`, {
         console.log(spesfiedBlog);
         blogTitle.value = spesfiedBlog.title;
         smallDescription.value = spesfiedBlog.shortDescription;
-        blogFullDescription.textContent = spesfiedBlog.fullDescription;
+        blogFullDescription.outerHTML = `<div id=\"editor\" class=\"ql-container ql-snow\"><div class=\"ql-editor\" data-gramm=\"false\" data-placeholder=\"enter blog content here...\" contenteditable=\"true\">${spesfiedBlog.fullDescription}</div><div class=\"ql-clipboard\" tabindex=\"-1\" contenteditable=\"true\"></div><div class=\"ql-tooltip ql-hidden\"><a class=\"ql-preview\" target=\"_blank\" href=\"about:blank\"></a><input type=\"text\" data-formula=\"e=mc^2\" data-link=\"https://quilljs.com\" data-video=\"Embed URL\"><a class=\"ql-action\"></a><a class=\"ql-remove\"></a></div></div>`;
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           const formData = new FormData();
