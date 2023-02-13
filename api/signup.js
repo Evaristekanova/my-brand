@@ -101,6 +101,7 @@ signUpForm.addEventListener('submit', async function (e) {
           wholeContainer.style.display = 'block';
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';
+          snackbarMsg.innerHTML = user.error;
           snackbar.style.display = 'grid';
           setTimeout(() => {
             snackbar.style.display = 'none';
