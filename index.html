@@ -21,6 +21,9 @@
       <div class="humberger">
         <span class="humberger-icon"><i class="fa-solid fa-bars"></i></span>
       </div>
+      <div class="snackbar">
+        <h1 class="snackbar_message">Email already taken</h1>
+      </div>
       <header id="home">
         <!-- <div class="header-container"> -->
         <div class="nav-holder">
@@ -329,7 +332,7 @@
                 <div class="flink flink-one">
                   <li><a class="f-link" href="#blogs">Blogs</a></li>
                   <li><a class="f-link" href="#contact">Contact</a></li>
-                  <li><a class="f-link" href="./html/login.html">Login</a></li>
+                  <li><a class="f-link" href="./html/login.html" id="log">Login</a></li>
                 </div>
               </nav>
             </div>
@@ -360,8 +363,8 @@
         </div>
       </footer>
     </div>
+    <script src="./api/logout.js"></script>
     <script defer src="./js/script.js"></script>
-    <script src="../api/logout.js"></script>
     <script defer src="./api/blog.js"></script>
   </body>
 </html>

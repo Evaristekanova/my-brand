@@ -16,6 +16,8 @@ const resNav = document.querySelector('.reponsive-nav');
 const navContainer = document.querySelector('.nav-container');
 const humberger = document.querySelector('.humberger-icon');
 const normalLink = document.querySelectorAll('.nav-link');
+const snackbar = document.querySelector('.snackbar');
+const snackbarMsg = document.querySelector('.snackbar_message');
 // -----------contact form variable decralation-------////
 const emailContact = document.getElementById('contact-email');
 const firstName = document.getElementById('contact-fname');
@@ -169,12 +171,13 @@ contactForm.addEventListener('submit', async function (e) {
         errorFname.innerHTML = '';
         emailError.innerHTML = '';
         textareaError.innerHTML = '';
-        window.location.assign('../index.html#contact')
-        alertMsg.style.display = 'block';
+        snackbarMsg.innerHTML = 'Message sent Successfully';
+        snackbar.style.backgroundColor = '#367e54';
+        snackbar.style.display = 'grid';
         setTimeout(() => {
-          alertMsg.style.display = 'none';
-        }, 3000);
+          snackbar.style.display = 'none';
+        }, 3500);
       })
       .catch((err) => console.log(err));
-    }
-  });
+  }
+});

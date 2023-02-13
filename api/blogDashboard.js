@@ -6,6 +6,8 @@ const no = document.getElementById('no');
 const layout = document.querySelector('.layout');
 const confirmBox = document.querySelector('.confirm-msg');
 const alertMsg = document.querySelector('.alert');
+const snackbar = document.querySelector('.snackbar');
+const snackbarMsg = document.querySelector('.snackbar_message');
 const blogContainerDashoard = document.querySelector('.dashboard-blog-list');
 const form = document.getElementById('form');
 const imageId = document.getElementById('ffile');
@@ -85,13 +87,11 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`, {
         blogFullDescription.textContent = spesfiedBlog.fullDescription;
         form.addEventListener('submit', function (e) {
           e.preventDefault();
-          console.log('clicked');
           const formData = new FormData();
           formData.append('title', blogTitle.value);
           formData.append('shortDescription', smallDescription.value);
           formData.append('fullDescription', blogFullDescription.textContent);
           formData.append('image', imageId.files[0]);
-          console.log(formData);
           updateBlog(formData);
         });
       });
@@ -139,17 +139,18 @@ async function updateBlog(data) {
   )
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
       blogTitle.value = '';
       smallDescription.value = '';
       blogFullDescription.textContent = '';
       imageId.files[0] = null;
       wholeContainer.style.display = 'block';
       preloader.style.display = 'none';
-      alertMsg.style.display = 'block';
+      snackbarMsg.innerHTML = 'Blog Updated Successfully';
+      snackbar.style.backgroundColor = '#367e54';
+      snackbar.style.display = 'grid';
       setTimeout(async () => {
-        alertMsg.style.display = 'none';
-      }, 3000);
+        snackbar.style.display = 'none';
+      }, 3500);
       normal.style.display = 'block';
       upBlog.style.display = 'none';
     });

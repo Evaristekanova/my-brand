@@ -11,6 +11,8 @@ const ConfirmPassword = document.getElementById('confirm-password');
 const signUpBtn = document.querySelector('.signup-btn');
 const error = document.querySelector('.error');
 const errorConfirm = document.querySelector('.error-confirm');
+const snackbar = document.querySelector('.snackbar');
+const snackbarMsg = document.querySelector('.snackbar_message');
 // =====================================================================///
 const nav = document.querySelector('.navbar');
 const humberger = document.querySelector('.humberger-icon');
@@ -55,13 +57,23 @@ signUpForm.addEventListener('submit', async function (e) {
   error.style.color = 'red';
   error.style.fontSize = '16px';
   if (createPassword.value.length < 8) {
-    message.push('password is not long enough');
+    message.push('provide at least 8 characters');
     error.innerHTML = message.join(' ');
-    return;
+     snackbarMsg.innerHTML = 'password is not long enough';
+     snackbar.style.display = 'grid';
+     setTimeout(() => {
+       snackbar.style.display = 'none';
+     }, 3500);
+     return;
   } else if (createPassword.value.length > 15) {
-    message.push('password is longer than enough');
+    message.push('limit is 15 characters');
     error.innerHTML = message.join(' ');
-    return;
+        snackbarMsg.innerHTML = 'password is longer than enough';
+        snackbar.style.display = 'grid';
+        setTimeout(() => {
+          snackbar.style.display = 'none';
+        }, 3500);
+        return;
   } else if (
     createPassword.value.length >= 8 &&
     createPassword.value.length <= 15 &&
@@ -89,27 +101,36 @@ signUpForm.addEventListener('submit', async function (e) {
           wholeContainer.style.display = 'block';
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';
-          alert('Email already taken');
+          snackbar.style.display = 'grid';
+          setTimeout(() => {
+            snackbar.style.display = 'none';
+          }, 3500);
           return;
         }
         preloader.style.display = 'none';
         wholeContainer.style.display = 'block';
         nameForm.value =
-          emailForSignUp.value =
-          createPassword.value =
-          ConfirmPassword.value =
-            '';
-        alertMsg.style.display = 'block';
+        emailForSignUp.value =
+        createPassword.value =
+        ConfirmPassword.value =
+        '';
+        snackbar.style.backgroundColor = '#367e54';
+        snackbar.style.backgroundColor = 'created successfully';
+        snackbar.style.display = 'grid';
         setTimeout(() => {
-          alertMsg.style.display = 'none';
-        }, 3000);
+          snackbar.style.display = 'none';
+        }, 3500);
         const token = user.token;
         localStorage.setItem('token', JSON.stringify(token));
-        window.location.assign('../index.html#blogs')
+        window.location.assign('../index.html#blogs');
       })
       .catch((err) => console.log(err));
   } else {
-    message.push('incorrect password');
-    errorConfirm.innerHTML = message.join(' ');
+    snackbarMsg.innerHTML = 'password does not match';
+    snackbar.style.display = 'grid';
+    setTimeout(() => {
+      snackbar.style.display = 'none';
+    }, 3500);
+    return;
   }
 });

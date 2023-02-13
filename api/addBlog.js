@@ -1,6 +1,8 @@
 'use strict';
 const preloader = document.getElementById('preloader');
 const wholeContainer = document.querySelector('.whole-cont');
+const snackbar = document.querySelector('.snackbar');
+const snackbarMsg = document.querySelector('.snackbar_message');
 logout.addEventListener('click', function (e) {
   e.preventDefault();
   localStorage.removeItem('token');
@@ -43,7 +45,12 @@ form.addEventListener('submit', (event) => {
       if (blog.message === 'all fields are required') {
         preloader.style.display = 'none';
         wholeContainer.style.display = 'block';
-        return alert('all fields are required');
+        snackbarMsg.innerHTML = 'all fields are required';
+        snackbar.style.display = 'grid';
+        setTimeout(() => {
+          snackbar.style.display = 'none';
+        }, 3500);
+        return;
       }
       blogTitle.value = '';
       smallDescription.value = '';
@@ -51,10 +58,12 @@ form.addEventListener('submit', (event) => {
       imageId.value = null;
       preloader.style.display = 'none';
       wholeContainer.style.display = 'block';
-      alertMsg.style.display = 'block';
-      setTimeout(async () => {
-        alertMsg.style.display = 'none';
-      }, 3000);
+      snackbarMsg.innerHTML = 'Blog added successfully';
+      snackbar.style.backgroundColor = '#367e54';
+      snackbar.style.display = 'grid';
+      setTimeout(() => {
+        snackbar.style.display = 'none';
+      }, 3500);
     })
     .catch((error) => {
       console.log(error);

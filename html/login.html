@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="shortcut icon" href="./img/passport.jpeg" type="image.jpeg" />
+    <link rel="shortcut icon" href="../img/passport.jpeg" type="image.jpeg" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -20,6 +20,9 @@
       <div class="humberger">
         <span class="humberger-icon"><i class="fa-solid fa-bars"></i></span>
       </div>
+      <div class="snackbar">
+        <h1 class="snackbar_message">wrong password or email</h1>
+      </div>
       <header class="login-header">
         <div class="nav-container nav-for-all">
           <nav class="navbar">
@@ -32,7 +35,7 @@
             <li>
               <a class="nav-link" href="../index.html#contact">Contact</a>
             </li>
-            <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
+            <li><a class="nav-link" href="./login.html" id="log">Login</a></li>  
           </nav>
         </div>
         <div class="humberger-container">
@@ -53,7 +56,7 @@
             <li>
               <a class="nav-link" href="../index.html#contact">Contact</a>
             </li>
-            <!-- <li><a class="nav-link" href="./html/login.html">Login</a></li>   -->
+            <li><a class="nav-link" href="./login.html" id="log">Login</a></li>  
           </nav>
         </div>
         <div class="login-contanier">
@@ -96,6 +99,7 @@
         </div>
       </header>
     </div>
+    <script src="../api/logout.js"></script>
     <script defer src="../api/login.js"></script>
   </body>
 </html>
