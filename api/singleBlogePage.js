@@ -14,7 +14,8 @@ const messageDivisionContainer = document.querySelector('.blogs-block-single');
 const article = document.querySelector('.article');
 let content = '';
 let postComments;
-
+const snackbar = document.querySelector('.snackbar');
+const snackbarMsg = document.querySelector('.snackbar_message');
 const nav = document.querySelector('.navbar');
 const humberger = document.querySelector('.humberger-icon');
 const closeHumberger = document.querySelector('.close');
@@ -133,6 +134,8 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
 function postMessage() {
   const token = JSON.parse(localStorage.getItem('token'));
   if (!token) {
+      wholeContainer.style.display = 'block';
+      preloader.style.display = 'none';
     alert('Please login to comment');
     window.location.assign('../html/login.html');
     return;
@@ -140,7 +143,12 @@ function postMessage() {
   const commentField = document.getElementById('write-comment');
   const comment = document.getElementById('write-comment').value;
   if (comment == '' || comment.trim() == '') {
-    return alert('Please enter a comment');
+    snackbarMsg.innerHTML = 'please write a comment';
+    snackbar.style.display = 'grid';
+    setTimeout(() => {
+      snackbar.style.display = 'none';
+    }, 3500);
+    return;
   }
   const commentContent = comment;
   wholeContainer.style.display = 'none';
