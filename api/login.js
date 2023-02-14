@@ -72,7 +72,6 @@ loginForm.addEventListener('submit', function (e) {
     })
       .then((res) => res.json())
       .then((user) => {
-        console.log(user);
         if (user.message === 'incorrect username or password') {
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';
@@ -83,18 +82,16 @@ loginForm.addEventListener('submit', function (e) {
           return;
         }
         const userStuff = user.user;
-        const isAdmin = userStuff.isAdmin;
+        const isAdmin = userStuff?.isAdmin;
         (loginEmail.value = ''), (loginPasswd.value = '');
         const message = user.message;
         const accessToken = user.data;
-        console.log(isAdmin);
         if (accessToken) {
-          localStorage.setItem('token', JSON.stringify(accessToken));
           localStorage.setItem('isAdmin', JSON.stringify(isAdmin));
+          localStorage.setItem('token', JSON.stringify(accessToken));
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';
           if (isAdmin === true) {
-            console.log('hey its me again');
             window.location.assign('./dashboard.html');
           } else {
             window.location.assign(

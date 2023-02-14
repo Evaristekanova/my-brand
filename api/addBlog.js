@@ -6,6 +6,7 @@ const snackbarMsg = document.querySelector('.snackbar_message');
 logout.addEventListener('click', function (e) {
   e.preventDefault();
   localStorage.removeItem('token');
+  localStorage.removeItem('isAdmin');
   window.location.assign('../index.html');
 });
 const token = JSON.parse(localStorage.getItem('token'));
@@ -42,7 +43,6 @@ form.addEventListener('submit', (event) => {
   })
     .then((response) => response.json())
     .then((blog) => {
-      console.log(blog);
       if (blog.message === 'all fields are required') {
         preloader.style.display = 'none';
         wholeContainer.style.display = 'block';

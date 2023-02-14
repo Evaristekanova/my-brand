@@ -9,6 +9,7 @@ const logout = document.getElementById('logout');
 logout.addEventListener('click', function (e) {
   e.preventDefault();
   localStorage.removeItem('token');
+    localStorage.removeItem('isAdmin');
   window.location.assign('../index.html');
 });
 if (!token || isAdmin === false) {
@@ -62,12 +63,10 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/messages/all`, {
           )
             .then((res) => res.json())
             .then((msg) => {
-              console.log(msg);
               preloader.style.display = 'none';
               wholeContainer.style.display = 'block';
               location.reload();
             });
-          // .catch((err) => console.log(err));
         });
       })
       .catch((err) => console.log(err));

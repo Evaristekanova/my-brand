@@ -95,7 +95,6 @@ signUpForm.addEventListener('submit', async function (e) {
     })
       .then((res) => res.json())
       .then((user) => {
-        console.log(user);
         if (user?.error) {
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';

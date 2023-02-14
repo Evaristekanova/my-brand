@@ -23,7 +23,6 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
             </div>
         </div>
         `;
-      // console.log(el.id);
     });
     const aBlog = document.createElement('div').classList.add('blog');
     blogContainer.innerHTML += content;
