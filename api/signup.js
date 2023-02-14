@@ -108,6 +108,8 @@ signUpForm.addEventListener('submit', async function (e) {
           }, 3500);
           return;
         }
+        const userStuff = user.user;
+        const isAdmin = userStuff.isAdmin;
         preloader.style.display = 'none';
         wholeContainer.style.display = 'block';
         nameForm.value =
@@ -123,7 +125,8 @@ signUpForm.addEventListener('submit', async function (e) {
         }, 3500);
         const token = user.token;
         localStorage.setItem('token', JSON.stringify(token));
-        window.location.assign('../index.html#blogs');
+        localStorage.setItem('isAdmin', JSON.stringify(isAdmin));
+        // window.location.assign('../index.html#blogs');
       })
       .catch((err) => console.log(err));
   } else {

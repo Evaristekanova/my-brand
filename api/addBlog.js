@@ -9,7 +9,8 @@ logout.addEventListener('click', function (e) {
   window.location.assign('../index.html');
 });
 const token = JSON.parse(localStorage.getItem('token'));
-if (!token) {
+const isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
+if (!token || isAdmin === false) {
   window.location.assign('../html/login.html');
 }
 // ==================all decralation=====================//

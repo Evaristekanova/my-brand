@@ -1,6 +1,7 @@
 const preloader = document.getElementById('preloader');
 const wholeContainer = document.querySelector('.whole-cont');
 const token = JSON.parse(localStorage.getItem('token'));
+const isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
 const yes = document.getElementById('yes');
 const no = document.getElementById('no');
 const layout = document.querySelector('.layout');
@@ -22,8 +23,8 @@ logout.addEventListener('click', function (e) {
   localStorage.removeItem('token');
   window.location.assign('../index.html');
 });
-if (!token) {
-  window.location.assign('../html/login');
+if (!token || isAdmin === false) {
+  window.location.assign('../html/login.html');
 }
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';

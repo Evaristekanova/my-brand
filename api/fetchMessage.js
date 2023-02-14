@@ -1,6 +1,7 @@
 const preloader = document.getElementById('preloader');
 const wholeContainer = document.querySelector('.whole-cont');
 const token = JSON.parse(localStorage.getItem('token'));
+const isAdmin = JSON.parse(localStorage.getItem('isAdmin'));
 const messagesContainer = document.querySelector('.messages-whole-container');
 wholeContainer.style.display = 'none';
 preloader.style.display = 'block';
@@ -9,7 +10,10 @@ logout.addEventListener('click', function (e) {
   e.preventDefault();
   localStorage.removeItem('token');
   window.location.assign('../index.html');
-})
+});
+if (!token || isAdmin === false) {
+  window.location.assign('../html/login.html');
+}
 fetch(`https://important-suit-tuna.cyclic.app/api/v1/messages/all`, {
   mode: 'cors',
   headers: {
@@ -62,9 +66,9 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/messages/all`, {
               preloader.style.display = 'none';
               wholeContainer.style.display = 'block';
               location.reload();
-            })
-            // .catch((err) => console.log(err));
+            });
+          // .catch((err) => console.log(err));
         });
       })
-      .catch((err) =>console.log(err));
+      .catch((err) => console.log(err));
   });
