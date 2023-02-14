@@ -11,13 +11,14 @@ if (token || isAdmin) {
   logger.addEventListener('click', function (e) {
     e.preventDefault();
     localStorage.removeItem('token');
-    localStorage.removeItem('isAdmin');
+      localStorage.removeItem('isAdmin');
+      location.reload();
   });
   loggeRes.innerHTML = 'Logout';
   loggeRes.addEventListener('click', function (e) {
     e.preventDefault();
     localStorage.removeItem('token');
     localStorage.removeItem('isAdmin');
+    location.reload();
   });
-    window.reload();
 }
