@@ -86,9 +86,9 @@
 		padding: 40px 15px 10px 15px;
 		display: flex;
 		flex-direction: column-reverse;
-		gap: 30px;
+		gap: 20px;
 		align-items: flex-start;
-		height: 90vh;
+		height: 85vh;
 		/* margin-bottom: 700px; */
 	}
 	.photo-container{
@@ -109,7 +109,7 @@
 		justify-content:flex-start;
 		align-items: center;
 		text-align: left;
-		gap: 30px;
+		gap: 20px;
 	}
 	/* --section titlie---- */
 	.section-title{
@@ -595,6 +595,14 @@
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 30px;
+	}
+		.head-container{
+		padding: 40px 15px 10px 15px;
+		display: flex;
+		flex-direction: column-reverse;
+		/* gap: 20px; */
+		align-items: flex-start;
+		height: 80vh;
 	}
 }
 @media only screen and (max-width:340px){
