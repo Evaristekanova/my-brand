@@ -98,11 +98,9 @@ fetch(`https://important-suit-tuna.cyclic.app/api/v1/blogs/all`)
           )
             .then((res) => res.json())
             .then((data) => {
-              // console.log(data);
               const theseComments = data.data
                 .filter((comment) => comment.blog === blog._id)
                 .reverse();
-              // console.log(theseComments);
               let comments = '';
               theseComments.forEach((comment) => {
                 comments = `
@@ -166,7 +164,6 @@ function postMessage() {
   )
     .then((res) => res.json())
     .then((comment) => {
-      console.log(comment);
       commentField.value = '';
       window.location.reload();
       preloader.style.display = 'none';
