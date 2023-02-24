@@ -95,6 +95,7 @@ signUpForm.addEventListener('submit', async function (e) {
     })
       .then((res) => res.json())
       .then((user) => {
+        console.log(user);
         if (user?.error) {
           preloader.style.display = 'none';
           wholeContainer.style.display = 'block';
@@ -117,7 +118,7 @@ signUpForm.addEventListener('submit', async function (e) {
         ConfirmPassword.value =
         '';
         snackbar.style.backgroundColor = '#367e54';
-        snackbar.style.backgroundColor = 'created successfully';
+        snackbarMsg.innerHTML = 'created successfully';
         snackbar.style.display = 'grid';
         setTimeout(() => {
           snackbar.style.display = 'none';
@@ -125,7 +126,7 @@ signUpForm.addEventListener('submit', async function (e) {
         const token = user.token;
         localStorage.setItem('token', JSON.stringify(token));
         localStorage.setItem('isAdmin', JSON.stringify(isAdmin));
-        // window.location.assign('../index.html#blogs');
+        window.location.assign('../index.html');
       })
       .catch((err) => console.log(err));
   } else {
